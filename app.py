@@ -24,275 +24,239 @@ st.set_page_config(
 
 
 # ============================================================
-# PROFESSIONAL DARK ENTERPRISE UI
+# PROFESSIONAL DARK UI
 # ============================================================
 
 st.markdown(
     """
 <style>
 
-/* ============================================================
-   COLOR SYSTEM
-   ============================================================ */
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
-:root {
-    --bg: #07101C;
-    --bg-soft: #0A1422;
-    --sidebar: #091321;
-
-    --card: #0E1A2A;
-    --card-2: #101E30;
-
-    --border: #22364D;
-    --border-light: #2D455E;
-
-    --text: #F8FAFC;
-    --text-main: #E8EEF6;
-    --text-soft: #B9C7D8;
-    --text-muted: #8292A6;
-
-    --cyan: #38BDF8;
-    --cyan-light: #7DD3FC;
-    --blue: #0EA5E9;
-
-    --green: #34D399;
-}
-
-
-/* ============================================================
-   GLOBAL APP
-   ============================================================ */
-
-html,
-body,
-.stApp,
-[data-testid="stAppViewContainer"] {
-    background: var(--bg) !important;
-    color: var(--text-main) !important;
+html, body, [class*="css"] {
+    font-family: Inter, Arial, sans-serif !important;
 }
 
 .stApp {
-    min-height: 100vh !important;
+    background: #07111F !important;
+    color: #F8FAFC !important;
 }
 
 .main {
-    background: var(--bg) !important;
+    background: #07111F !important;
 }
 
 .block-container {
-    max-width: 1500px !important;
-    padding-top: 1.2rem !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-    padding-bottom: 8rem !important;
+    max-width: 1450px !important;
+    padding-top: 25px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    padding-bottom: 130px !important;
 }
 
 
-/* ============================================================
-   GLOBAL TEXT VISIBILITY
-   ============================================================ */
+/* =========================================================
+   ALL MARKDOWN TEXT
+   ========================================================= */
 
-[data-testid="stAppViewContainer"] p,
-[data-testid="stAppViewContainer"] li,
-[data-testid="stAppViewContainer"] label {
-    color: var(--text-main) !important;
+[data-testid="stMarkdownContainer"] {
+    color: #E8EEF7 !important;
 }
 
-[data-testid="stAppViewContainer"] h1,
-[data-testid="stAppViewContainer"] h2,
-[data-testid="stAppViewContainer"] h3,
-[data-testid="stAppViewContainer"] h4,
-[data-testid="stAppViewContainer"] h5,
-[data-testid="stAppViewContainer"] h6 {
+[data-testid="stMarkdownContainer"] p {
+    color: #D5DFEC !important;
+}
+
+[data-testid="stMarkdownContainer"] li {
+    color: #D5DFEC !important;
+}
+
+[data-testid="stMarkdownContainer"] strong {
     color: #FFFFFF !important;
 }
 
-
-/* ============================================================
-   HEADER
-   ============================================================ */
-
-header[data-testid="stHeader"] {
-    background: var(--bg) !important;
+[data-testid="stMarkdownContainer"] em {
+    color: #D5DFEC !important;
 }
 
-[data-testid="stToolbar"] {
-    background: transparent !important;
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4,
+[data-testid="stMarkdownContainer"] h5 {
+    color: #F8FAFC !important;
 }
 
 
-/* ============================================================
+/* =========================================================
    SIDEBAR
-   ============================================================ */
+   ========================================================= */
 
 [data-testid="stSidebar"] {
-    background: var(--sidebar) !important;
-    border-right: 1px solid #1B2B3E !important;
+    background: #091522 !important;
+    border-right: 1px solid #1B3046 !important;
 }
 
 [data-testid="stSidebar"] > div:first-child {
-    background: var(--sidebar) !important;
-    padding: 22px 16px !important;
+    background: #091522 !important;
+    padding: 25px 18px !important;
+}
+
+[data-testid="stSidebar"] p {
+    color: #AEBED0 !important;
 }
 
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
 [data-testid="stSidebar"] h3,
 [data-testid="stSidebar"] h4 {
-    color: #FFFFFF !important;
-}
-
-[data-testid="stSidebar"] p,
-[data-testid="stSidebar"] li {
-    color: #B9C7D8 !important;
+    color: #F8FAFC !important;
 }
 
 [data-testid="stSidebar"] hr {
-    border-color: #1B2B3E !important;
+    border-color: #1C3045 !important;
     margin: 22px 0 !important;
 }
 
 
-/* ============================================================
+/* =========================================================
    SIDEBAR BRAND
-   ============================================================ */
+   ========================================================= */
 
 .side-brand {
     display: flex;
     align-items: center;
-    gap: 11px;
-    margin-bottom: 8px;
+    gap: 12px;
+    margin-bottom: 5px;
 }
 
 .side-logo {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
-    background: #0E2739;
-    border: 1px solid #1F5875;
+    background: #0C2A42;
+    border: 1px solid #15567D;
 
-    color: #67E8F9 !important;
-
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .side-title {
     color: #FFFFFF !important;
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-weight: 800;
 }
 
 .side-subtitle {
-    color: #718096 !important;
-    font-size: 0.66rem;
-    letter-spacing: 1.2px;
+    color: #6F849A !important;
+    font-size: 0.63rem;
+    letter-spacing: 1.3px;
     font-weight: 700;
 }
 
 
-/* ============================================================
+/* =========================================================
    SIDEBAR SECTION
-   ============================================================ */
+   ========================================================= */
 
 .side-section {
-    color: #7DD3FC !important;
+    color: #4CC9F0 !important;
 
-    font-size: 0.69rem;
+    font-size: 0.68rem;
     font-weight: 800;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
 
-    margin-bottom: 10px;
+    margin-bottom: 11px;
 }
 
 
-/* ============================================================
+/* =========================================================
    WORKFLOW
-   ============================================================ */
+   ========================================================= */
 
 .workflow {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin: 10px 0;
+    margin: 11px 0;
 }
 
 .workflow-num {
-    min-width: 24px;
-    height: 24px;
+    min-width: 25px;
+    height: 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #0E1B2B;
-    border: 1px solid #29435D;
+    background: #0D2032;
+    border: 1px solid #25425B;
 
     border-radius: 6px;
 
     color: #67E8F9 !important;
 
-    font-size: 0.67rem;
+    font-size: 0.65rem;
     font-weight: 800;
 }
 
 .workflow-text {
-    color: #B9C7D8 !important;
+    color: #B9C7D6 !important;
 
-    font-size: 0.79rem;
+    font-size: 0.77rem;
     line-height: 1.5;
 }
 
 
-/* ============================================================
-   TOOL BOX
-   ============================================================ */
+/* =========================================================
+   TOOL CARDS
+   ========================================================= */
 
 .tool-box {
     display: flex;
     align-items: center;
-    gap: 9px;
 
-    padding: 9px 11px;
+    padding: 10px 12px;
     margin-bottom: 7px;
 
-    background: #0D1928;
+    background: #0D1A29;
 
-    border: 1px solid #203349;
-
+    border: 1px solid #1E344B;
     border-radius: 8px;
 
-    color: #D6E0EC !important;
+    color: #D1DCE8 !important;
 
-    font-size: 0.78rem;
+    font-size: 0.77rem;
 }
 
 
-/* ============================================================
+/* =========================================================
    MODEL CARD
-   ============================================================ */
+   ========================================================= */
 
 .model-card {
-    background: #0D1928;
+    background: #0D1B2A;
 
-    border: 1px solid #29435D;
+    border: 1px solid #24435C;
 
     border-radius: 10px;
 
-    padding: 12px;
+    padding: 13px;
 }
 
 .model-label {
-    color: #718096 !important;
+    color: #71859A !important;
 
-    font-size: 0.65rem;
+    font-size: 0.63rem;
 
     text-transform: uppercase;
 
@@ -300,151 +264,150 @@ header[data-testid="stHeader"] {
 
     font-weight: 800;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .model-value {
-    color: #7DD3FC !important;
+    color: #5ED8FF !important;
 
-    font-family: monospace;
+    font-family: Consolas, monospace;
 
-    font-size: 0.76rem;
+    font-size: 0.74rem;
 
     font-weight: 700;
+
+    word-break: break-word;
 }
 
 
-/* ============================================================
-   SECURITY CARD
-   ============================================================ */
+/* =========================================================
+   SECURITY
+   ========================================================= */
 
 .security-card {
-    background: #0A1918;
+    background: #0A1D1C;
 
-    border: 1px solid #21453F;
+    border: 1px solid #1B4842;
 
     border-radius: 9px;
 
-    padding: 11px;
+    padding: 12px;
 
-    color: #A7C4C0 !important;
+    color: #9FC3BE !important;
 
-    font-size: 0.72rem;
+    font-size: 0.71rem;
 
     line-height: 1.55;
 }
 
 
-/* ============================================================
+/* =========================================================
    SIDEBAR BUTTON
-   ============================================================ */
+   ========================================================= */
 
 [data-testid="stSidebar"] .stButton > button {
     width: 100% !important;
 
-    background: #101C2B !important;
+    background: #0D1B2A !important;
 
-    color: #DCE6F2 !important;
+    color: #D9E5F0 !important;
 
-    border: 1px solid #2A4058 !important;
+    border: 1px solid #284058 !important;
 
     border-radius: 9px !important;
 
     min-height: 42px !important;
 
-    font-size: 0.8rem !important;
-
     font-weight: 700 !important;
 }
 
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: #14263A !important;
+    background: #12263A !important;
 
     color: #FFFFFF !important;
 
-    border-color: #38BDF8 !important;
-}
-
-[data-testid="stSidebar"] .stButton > button p {
-    color: inherit !important;
+    border-color: #39BCEB !important;
 }
 
 
-/* ============================================================
+/* =========================================================
    TOP BAR
-   ============================================================ */
+   ========================================================= */
 
 .topbar {
-    min-height: 62px;
-
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    padding: 0 4px 15px 4px;
+    padding: 0 0 18px 0;
 
-    border-bottom: 1px solid #192B3F;
+    margin-bottom: 24px;
 
-    margin-bottom: 22px;
+    border-bottom: 1px solid #1A2C40;
 }
 
 .top-left {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 }
 
 .top-logo {
-    width: 39px;
-    height: 39px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    background: #0E2638;
+    background: #0C2940;
 
-    border: 1px solid #205975;
+    border: 1px solid #18577B;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
-    color: #67E8F9 !important;
-
-    font-size: 19px;
+    font-size: 20px;
 }
 
 .top-title {
-    color: #F8FAFC !important;
+    color: #FFFFFF !important;
 
-    font-size: 1rem;
+    font-size: 1.02rem;
 
     font-weight: 800;
 }
 
 .top-subtitle {
-    color: #718096 !important;
+    color: #71859A !important;
 
-    font-size: 0.68rem;
+    font-size: 0.67rem;
 
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .online {
     display: flex;
+
     align-items: center;
+
     gap: 7px;
 
-    padding: 6px 10px;
+    padding: 7px 11px;
 
-    background: #0A1E19;
+    background: #092019;
 
-    border: 1px solid #1C473A;
+    border: 1px solid #18503E;
 
     border-radius: 20px;
 
     color: #6EE7B7 !important;
 
-    font-size: 0.68rem;
+    font-size: 0.66rem;
 
     font-weight: 800;
 }
@@ -457,134 +420,135 @@ header[data-testid="stHeader"] {
 
     background: #34D399;
 
-    box-shadow: 0 0 8px #34D399;
+    box-shadow: 0 0 9px #34D399;
 }
 
 
-/* ============================================================
+/* =========================================================
    HERO
-   ============================================================ */
+   ========================================================= */
 
 .hero {
     background:
         linear-gradient(
             115deg,
-            #0D1B2C 0%,
-            #10283A 55%,
-            #0E3442 100%
+            #0E1D2E 0%,
+            #102B3E 50%,
+            #0D3541 100%
         );
 
-    border: 1px solid #29485C;
+    border: 1px solid #285069;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    padding: 34px 38px;
+    padding: 38px 42px;
 
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,0.20);
+        0 18px 50px rgba(0,0,0,0.25);
 }
 
 .hero-badge {
     display: inline-block;
 
-    padding: 6px 11px;
+    padding: 7px 12px;
 
-    border-radius: 6px;
+    border-radius: 7px;
 
-    background: #0D293B;
+    background: #0B2B3F;
 
-    border: 1px solid #24566F;
+    border: 1px solid #1E5A76;
 
-    color: #7DD3FC !important;
+    color: #67E8F9 !important;
 
     font-size: 0.67rem;
 
     font-weight: 800;
 
-    letter-spacing: 1.1px;
+    letter-spacing: 1.2px;
 
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 }
 
 .hero-title {
     color: #FFFFFF !important;
 
-    font-size: 2.35rem;
+    font-size: 2.45rem;
 
     font-weight: 850;
 
     line-height: 1.15;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.hero-title span {
-    color: #67E8F9 !important;
+.hero-highlight {
+    color: #4DD7FF !important;
 }
 
 .hero-description {
-    color: #C4D0DE !important;
+    color: #C1CFDD !important;
 
-    font-size: 0.94rem;
+    font-size: 0.96rem;
 
     max-width: 900px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 
-/* ============================================================
+/* =========================================================
    FEATURE CARDS
-   ============================================================ */
+   ========================================================= */
 
 .feature-card {
-    background: #0D1928;
+    background: #0C1827;
 
-    border: 1px solid #22374D;
+    border: 1px solid #1F354A;
 
-    border-radius: 12px;
+    border-radius: 13px;
 
-    padding: 19px;
+    padding: 20px;
 
-    min-height: 145px;
+    min-height: 150px;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.12);
+        0 8px 28px rgba(0,0,0,0.16);
 }
 
 .feature-card:hover {
-    border-color: #32627B;
+    border-color: #2B6078;
 }
 
 .feature-icon {
-    font-size: 18px;
-    margin-bottom: 9px;
+    font-size: 20px;
+
+    margin-bottom: 10px;
 }
 
 .feature-title {
-    color: #F1F5F9 !important;
+    color: #F1F6FB !important;
 
-    font-size: 0.91rem;
+    font-size: 0.93rem;
 
     font-weight: 800;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 }
 
 .feature-text {
-    color: #A8B6C7 !important;
+    color: #A7B6C8 !important;
 
     font-size: 0.78rem;
 
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 
-/* ============================================================
+/* =========================================================
    SECTION
-   ============================================================ */
+   ========================================================= */
 
 .section-header {
     display: flex;
@@ -593,56 +557,54 @@ header[data-testid="stHeader"] {
 
     justify-content: space-between;
 
-    margin: 24px 0 9px 0;
+    margin: 27px 0 10px 0;
 }
 
 .section-title {
-    color: #DCE6F2 !important;
+    color: #DDE7F2 !important;
 
-    font-size: 0.75rem;
+    font-size: 0.74rem;
 
     font-weight: 800;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.3px;
 
     text-transform: uppercase;
 }
 
 .section-status {
-    color: #718096 !important;
+    color: #6E8195 !important;
 
-    font-size: 0.68rem;
+    font-size: 0.67rem;
 }
 
 
-/* ============================================================
-   MAIN BUTTONS
-   ============================================================ */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .stButton > button {
-    background: #0F1C2B !important;
+    background: #0E1B2A !important;
 
-    color: #E2E8F0 !important;
+    color: #E1EAF3 !important;
 
-    border: 1px solid #294058 !important;
+    border: 1px solid #294057 !important;
 
-    border-radius: 8px !important;
+    border-radius: 9px !important;
 
-    min-height: 42px !important;
+    min-height: 44px !important;
 
     font-size: 0.8rem !important;
 
     font-weight: 700 !important;
-
-    box-shadow: none !important;
 }
 
 .stButton > button:hover {
-    background: #14283C !important;
+    background: #12283B !important;
 
     color: #FFFFFF !important;
 
-    border-color: #3292BD !important;
+    border-color: #35BCEB !important;
 }
 
 .stButton > button p {
@@ -650,467 +612,198 @@ header[data-testid="stHeader"] {
 }
 
 
-/* ============================================================
-   CRITICAL CHAT MESSAGE
-   ============================================================ */
+/* =========================================================
+   CHAT MESSAGE
+   ========================================================= */
 
 [data-testid="stChatMessage"] {
-    background: #0D1928 !important;
+    background: #0B1725 !important;
 
-    border: 1px solid #24394F !important;
-
-    border-radius: 14px !important;
-
-    padding: 18px 20px !important;
-
-    margin-bottom: 14px !important;
-}
-
-
-/* ALL MARKDOWN INSIDE CHAT */
-
-[data-testid="stChatMessage"] .stMarkdown {
-    color: #E8EEF6 !important;
-}
-
-[data-testid="stChatMessage"] .stMarkdown p,
-[data-testid="stChatMessage"] .stMarkdown li,
-[data-testid="stChatMessage"] .stMarkdown span,
-[data-testid="stChatMessage"] .stMarkdown div {
-    color: #E8EEF6 !important;
-}
-
-
-/* HEADINGS */
-
-[data-testid="stChatMessage"] .stMarkdown h1,
-[data-testid="stChatMessage"] .stMarkdown h2,
-[data-testid="stChatMessage"] .stMarkdown h3,
-[data-testid="stChatMessage"] .stMarkdown h4,
-[data-testid="stChatMessage"] .stMarkdown h5,
-[data-testid="stChatMessage"] .stMarkdown h6 {
-    color: #FFFFFF !important;
-
-    font-weight: 800 !important;
-
-    line-height: 1.4 !important;
-
-    margin-top: 18px !important;
-
-    margin-bottom: 9px !important;
-}
-
-
-/* PARAGRAPHS */
-
-[data-testid="stChatMessage"] .stMarkdown p {
-    color: #E8EEF6 !important;
-
-    font-size: 0.96rem !important;
-
-    line-height: 1.75 !important;
-}
-
-
-/* BOLD */
-
-[data-testid="stChatMessage"] .stMarkdown strong,
-[data-testid="stChatMessage"] .stMarkdown b {
-    color: #FFFFFF !important;
-
-    font-weight: 800 !important;
-}
-
-
-/* ITALIC */
-
-[data-testid="stChatMessage"] .stMarkdown em,
-[data-testid="stChatMessage"] .stMarkdown i {
-    color: #D5DFEA !important;
-}
-
-
-/* LIST */
-
-[data-testid="stChatMessage"] .stMarkdown ul,
-[data-testid="stChatMessage"] .stMarkdown ol {
-    color: #E8EEF6 !important;
-
-    padding-left: 25px !important;
-}
-
-[data-testid="stChatMessage"] .stMarkdown li {
-    color: #E8EEF6 !important;
-
-    line-height: 1.7 !important;
-
-    margin-bottom: 5px !important;
-}
-
-
-/* LINKS */
-
-[data-testid="stChatMessage"] .stMarkdown a {
-    color: #38BDF8 !important;
-
-    text-decoration: none !important;
-
-    font-weight: 650 !important;
-}
-
-[data-testid="stChatMessage"] .stMarkdown a:hover {
-    color: #7DD3FC !important;
-
-    text-decoration: underline !important;
-}
-
-
-/* ============================================================
-   CHAT TABLE
-   ============================================================ */
-
-[data-testid="stChatMessage"] table {
-    width: 100% !important;
-
-    border-collapse: collapse !important;
-
-    margin: 16px 0 !important;
-
-    background: #0E1A2A !important;
-
-    border: 1px solid #2A4058 !important;
-}
-
-[data-testid="stChatMessage"] thead {
-    background: #16283B !important;
-}
-
-[data-testid="stChatMessage"] th {
-    color: #FFFFFF !important;
-
-    background: #16283B !important;
-
-    border: 1px solid #2A4058 !important;
-
-    padding: 11px 13px !important;
-
-    font-weight: 800 !important;
-
-    text-align: left !important;
-}
-
-[data-testid="stChatMessage"] td {
-    color: #DCE6F2 !important;
-
-    background: #0F1C2B !important;
-
-    border: 1px solid #263B52 !important;
-
-    padding: 10px 13px !important;
-}
-
-[data-testid="stChatMessage"] tr:nth-child(even) td {
-    background: #0C1725 !important;
-}
-
-
-/* ============================================================
-   INLINE CODE
-   ============================================================ */
-
-[data-testid="stChatMessage"] .stMarkdown code {
-    color: #7DD3FC !important;
-
-    background: #111F30 !important;
-
-    border: 1px solid #294058 !important;
-
-    border-radius: 5px !important;
-
-    padding: 2px 6px !important;
-}
-
-
-/* ============================================================
-   CODE BLOCK
-   ============================================================ */
-
-[data-testid="stChatMessage"] .stMarkdown pre {
-    background: #070E18 !important;
-
-    border: 1px solid #263C53 !important;
-
-    border-radius: 10px !important;
-
-    padding: 15px !important;
-
-    overflow-x: auto !important;
-}
-
-[data-testid="stChatMessage"] .stMarkdown pre code {
-    background: transparent !important;
-
-    border: none !important;
-
-    color: #E2E8F0 !important;
-
-    padding: 0 !important;
-}
-
-
-/* ============================================================
-   BLOCKQUOTE
-   ============================================================ */
-
-[data-testid="stChatMessage"] .stMarkdown blockquote {
-    background: #0F1E2E !important;
-
-    border-left: 4px solid #38BDF8 !important;
-
-    color: #D3DEE9 !important;
-
-    padding: 10px 15px !important;
-
-    margin: 12px 0 !important;
-}
-
-[data-testid="stChatMessage"] .stMarkdown blockquote p {
-    color: #D3DEE9 !important;
-}
-
-
-/* ============================================================
-   CHAT AVATAR
-   ============================================================ */
-
-[data-testid="stChatMessageAvatar"] {
-    background: #10283A !important;
-}
-
-
-/* ============================================================
-   CHAT INPUT / BOTTOM
-   ============================================================ */
-
-.stBottom,
-[data-testid="stBottom"],
-[data-testid="stBottomBlockContainer"] {
-    background: #07101C !important;
-
-    background-color: #07101C !important;
-}
-
-[data-testid="stBottomBlockContainer"] {
-    padding-top: 10px !important;
-
-    padding-bottom: 12px !important;
-}
-
-
-/* INPUT BOX */
-
-[data-testid="stChatInput"] {
-    background: #0D1928 !important;
-
-    background-color: #0D1928 !important;
-
-    border: 1px solid #2B425A !important;
+    border: 1px solid #20364B !important;
 
     border-radius: 13px !important;
 
-    padding: 6px !important;
+    padding: 15px 18px !important;
+
+    margin-bottom: 12px !important;
+}
+
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] {
+    color: #EAF1F8 !important;
+}
+
+[data-testid="stChatMessage"] p {
+    color: #EAF1F8 !important;
+
+    line-height: 1.7 !important;
+}
+
+[data-testid="stChatMessage"] li {
+    color: #EAF1F8 !important;
+}
+
+[data-testid="stChatMessage"] strong {
+    color: #FFFFFF !important;
+}
+
+[data-testid="stChatMessage"] code {
+    color: #8BE8FF !important;
+}
+
+
+/* =========================================================
+   CHAT INPUT
+   ========================================================= */
+
+.stBottom {
+    background: #07111F !important;
+
+    border-top: 1px solid #1B2D41 !important;
+}
+
+[data-testid="stBottom"] {
+    background: #07111F !important;
+}
+
+[data-testid="stBottomBlockContainer"] {
+    background: #07111F !important;
+
+    padding-top: 10px !important;
+
+    padding-bottom: 14px !important;
+}
+
+[data-testid="stChatInput"] {
+    background: #0D1B2A !important;
+
+    border: 1px solid #29435B !important;
+
+    border-radius: 13px !important;
+
+    padding: 5px !important;
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,0.30) !important;
+        0 10px 35px rgba(0,0,0,0.35) !important;
 }
 
 [data-testid="stChatInput"] > div {
-    background: #0D1928 !important;
-
-    background-color: #0D1928 !important;
+    background: #0D1B2A !important;
 }
 
 [data-testid="stChatInput"] textarea {
-    background: #0D1928 !important;
+    background: #0D1B2A !important;
 
-    background-color: #0D1928 !important;
+    color: #FFFFFF !important;
 
-    color: #F8FAFC !important;
+    -webkit-text-fill-color: #FFFFFF !important;
 
-    -webkit-text-fill-color: #F8FAFC !important;
-
-    caret-color: #67E8F9 !important;
+    caret-color: #4DD7FF !important;
 
     border: none !important;
-
-    outline: none !important;
 
     font-size: 0.92rem !important;
 }
 
 [data-testid="stChatInput"] textarea::placeholder {
-    color: #718096 !important;
+    color: #74879B !important;
 
-    -webkit-text-fill-color: #718096 !important;
+    -webkit-text-fill-color: #74879B !important;
 
     opacity: 1 !important;
 }
 
 [data-testid="stChatInput"] button {
-    background: #0EA5E9 !important;
-
-    background-color: #0EA5E9 !important;
+    background: #0798D4 !important;
 
     color: #FFFFFF !important;
 
     border: none !important;
 
-    border-radius: 8px !important;
+    border-radius: 9px !important;
 }
 
 [data-testid="stChatInput"] button:hover {
-    background: #0284C7 !important;
-
-    background-color: #0284C7 !important;
+    background: #007DB5 !important;
 }
 
 
-/* ============================================================
-   GLOBAL MARKDOWN
-   ============================================================ */
-
-.stMarkdown {
-    color: #E8EEF6 !important;
-}
-
-.stMarkdown p,
-.stMarkdown li {
-    color: #E8EEF6 !important;
-}
-
-.stMarkdown h1,
-.stMarkdown h2,
-.stMarkdown h3,
-.stMarkdown h4,
-.stMarkdown h5,
-.stMarkdown h6 {
-    color: #FFFFFF !important;
-}
-
-.stMarkdown strong,
-.stMarkdown b {
-    color: #FFFFFF !important;
-}
-
-
-/* ============================================================
+/* =========================================================
    EXPANDER
-   ============================================================ */
+   ========================================================= */
 
 [data-testid="stExpander"] {
-    background: #0B1725 !important;
+    background: #0A1522 !important;
 
-    border: 1px solid #243A51 !important;
+    border: 1px solid #21384D !important;
 
     border-radius: 10px !important;
 }
 
 [data-testid="stExpander"] summary {
-    color: #E2E8F0 !important;
-
-    font-weight: 700 !important;
+    color: #D9E4EF !important;
 }
 
-[data-testid="stExpander"] summary p {
-    color: #E2E8F0 !important;
-}
-
-[data-testid="stExpander"] p,
-[data-testid="stExpander"] li,
-[data-testid="stExpander"] span {
-    color: #DCE6F2 !important;
+[data-testid="stExpander"] p {
+    color: #D9E4EF !important;
 }
 
 
-/* ============================================================
+/* =========================================================
    ALERTS
-   ============================================================ */
+   ========================================================= */
 
 [data-testid="stAlert"] {
-    border-radius: 9px !important;
-}
-
-
-/* ============================================================
-   CODE BLOCKS
-   ============================================================ */
-
-[data-testid="stCode"] {
-    background: #080F19 !important;
-
-    border: 1px solid #263C53 !important;
-
     border-radius: 10px !important;
 }
 
+[data-testid="stAlert"] p {
+    color: #E5EDF5 !important;
+}
 
-/* ============================================================
+
+/* =========================================================
+   CODE BLOCK
+   ========================================================= */
+
+[data-testid="stCodeBlock"] {
+    background: #050B12 !important;
+}
+
+
+/* =========================================================
    FOOTER
-   ============================================================ */
+   ========================================================= */
 
 .footer {
     text-align: center;
 
-    padding: 30px 0 15px;
+    padding: 35px 0 15px;
 
-    color: #64748B !important;
+    color: #64778B !important;
 
-    font-size: 0.72rem;
+    font-size: 0.7rem;
 
     line-height: 1.8;
 }
 
 .footer strong {
-    color: #8191A5 !important;
+    color: #8A9BAE !important;
 }
 
 
-/* ============================================================
-   SCROLLBAR
-   ============================================================ */
-
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-::-webkit-scrollbar-track {
-    background: #07101C;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #263A50;
-
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #315C75;
-}
-
-
-/* ============================================================
+/* =========================================================
    MOBILE
-   ============================================================ */
+   ========================================================= */
 
 @media (max-width: 768px) {
 
     .block-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
     .hero {
-        padding: 26px 22px;
+        padding: 27px 23px;
     }
 
     .hero-title {
@@ -1121,6 +814,9 @@ header[data-testid="stHeader"] {
         display: none;
     }
 
+    .topbar {
+        margin-bottom: 18px;
+    }
 }
 
 </style>
@@ -1161,17 +857,20 @@ tools = [
 @st.cache_resource(show_spinner=False)
 def build_agent():
 
+    api_key = None
+
     try:
         api_key = st.secrets.get("GROQ_API_KEY")
     except Exception:
         api_key = None
 
-    api_key = api_key or os.getenv("GROQ_API_KEY")
+    if not api_key:
+        api_key = os.getenv("GROQ_API_KEY")
 
     if not api_key:
         raise RuntimeError(
-            "GROQ_API_KEY is missing. "
-            "Please add GROQ_API_KEY to Streamlit Secrets."
+            "GROQ_API_KEY is missing. Add GROQ_API_KEY "
+            "inside Streamlit Secrets."
         )
 
     llm = ChatGroq(
@@ -1190,29 +889,16 @@ You are a professional Agentic AI Assistant.
 
 You are powered by OpenAI GPT-OSS 120B through Groq.
 
-Answer users clearly, accurately and professionally.
+Your responsibilities:
 
-Use web search when:
-- The user asks for current information.
-- The user explicitly asks you to search the web.
-- The question requires online verification.
-
-Use the addition and multiplication tools for arithmetic
-when appropriate.
-
-Never claim that you searched the web unless the search
-tool was actually used.
-
-Keep answers structured, useful and easy to understand.
-
-When appropriate, use:
-- headings
-- bullet points
-- numbered lists
-- tables
-- examples
-
-Do not make up information.
+1. Answer questions clearly and professionally.
+2. Keep answers structured and easy to read.
+3. Use web search when current information is needed.
+4. Use web search when the user explicitly asks to search online.
+5. Use addition and multiplication tools for arithmetic when useful.
+6. Never claim to have searched the web unless the search tool was actually used.
+7. If a tool is used, use its result to produce a clear final answer.
+8. Do not expose internal reasoning or hidden chain-of-thought.
 """
 
         response = llm_with_tools.invoke(
@@ -1225,34 +911,34 @@ Do not make up information.
             "messages": [response]
         }
 
-    builder = StateGraph(MessagesState)
+    graph = StateGraph(MessagesState)
 
-    builder.add_node(
+    graph.add_node(
         "assistant",
         assistant
     )
 
-    builder.add_node(
+    graph.add_node(
         "tools",
         ToolNode(tools)
     )
 
-    builder.add_edge(
+    graph.add_edge(
         START,
         "assistant"
     )
 
-    builder.add_conditional_edges(
+    graph.add_conditional_edges(
         "assistant",
         tools_condition
     )
 
-    builder.add_edge(
+    graph.add_edge(
         "tools",
         "assistant"
     )
 
-    return builder.compile()
+    return graph.compile()
 
 
 # ============================================================
@@ -1271,14 +957,17 @@ with st.sidebar:
 
     st.markdown(
         """
-<div class="side-brand">
-    <div class="side-logo">🤖</div>
-    <div>
-        <div class="side-title">AI Agent</div>
-        <div class="side-subtitle">INTELLIGENT WORKSPACE</div>
-    </div>
-</div>
-""",
+        <div class="side-brand">
+            <div class="side-logo">🤖</div>
+
+            <div>
+                <div class="side-title">AI Agent</div>
+                <div class="side-subtitle">
+                    INTELLIGENT WORKSPACE
+                </div>
+            </div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -1289,23 +978,26 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-    workflow = [
+    workflow_items = [
         ("01", "User sends a request"),
         ("02", "GPT-OSS 120B analyzes it"),
         ("03", "LangGraph selects a tool"),
         ("04", "Tool executes the task"),
-        ("05", "AI returns the result"),
+        ("05", "AI generates the answer"),
     ]
 
-    for number, item in workflow:
+    for number, text in workflow_items:
 
         st.markdown(
             f"""
-<div class="workflow">
-    <div class="workflow-num">{number}</div>
-    <div class="workflow-text">{item}</div>
-</div>
-""",
+            <div class="workflow">
+                <div class="workflow-num">{number}</div>
+
+                <div class="workflow-text">
+                    {text}
+                </div>
+            </div>
+            """,
             unsafe_allow_html=True,
         )
 
@@ -1318,10 +1010,10 @@ with st.sidebar:
 
     st.markdown(
         """
-<div class="tool-box">🔎 Web Search</div>
-<div class="tool-box">➕ Addition</div>
-<div class="tool-box">✖️ Multiplication</div>
-""",
+        <div class="tool-box">🔎 &nbsp; Web Search</div>
+        <div class="tool-box">➕ &nbsp; Addition</div>
+        <div class="tool-box">✖️ &nbsp; Multiplication</div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -1334,11 +1026,16 @@ with st.sidebar:
 
     st.markdown(
         """
-<div class="model-card">
-    <div class="model-label">Groq Inference</div>
-    <div class="model-value">openai/gpt-oss-120b</div>
-</div>
-""",
+        <div class="model-card">
+            <div class="model-label">
+                Groq Inference Model
+            </div>
+
+            <div class="model-value">
+                openai/gpt-oss-120b
+            </div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -1351,12 +1048,13 @@ with st.sidebar:
 
     st.markdown(
         """
-<div class="security-card">
-    🔐 API credentials are loaded securely
-    through Streamlit Secrets.
-    Never expose your API key in GitHub.
-</div>
-""",
+        <div class="security-card">
+            🔐 API credentials are loaded securely
+            through Streamlit Secrets.
+            <br><br>
+            Never expose your API key in GitHub.
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -1373,38 +1071,38 @@ with st.sidebar:
 
 
 # ============================================================
-# TOP BAR
+# TOP NAVIGATION
 # ============================================================
 
 st.markdown(
     """
-<div class="topbar">
+    <div class="topbar">
 
-    <div class="top-left">
+        <div class="top-left">
 
-        <div class="top-logo">
-            🤖
+            <div class="top-logo">
+                🤖
+            </div>
+
+            <div>
+                <div class="top-title">
+                    AI Agent Dashboard
+                </div>
+
+                <div class="top-subtitle">
+                    Agentic AI • LangGraph • Groq
+                </div>
+            </div>
+
         </div>
 
-        <div>
-            <div class="top-title">
-                AI Agent Dashboard
-            </div>
-
-            <div class="top-subtitle">
-                Agentic AI • LangGraph • Groq
-            </div>
+        <div class="online">
+            <div class="online-dot"></div>
+            SYSTEM ONLINE
         </div>
 
     </div>
-
-    <div class="online">
-        <div class="online-dot"></div>
-        SYSTEM ONLINE
-    </div>
-
-</div>
-""",
+    """,
     unsafe_allow_html=True,
 )
 
@@ -1415,25 +1113,25 @@ st.markdown(
 
 st.markdown(
     """
-<div class="hero">
+    <div class="hero">
 
-    <div class="hero-badge">
-        ✦ AGENTIC AI • LANGGRAPH
+        <div class="hero-badge">
+            ✦ AGENTIC AI • LANGGRAPH
+        </div>
+
+        <div class="hero-title">
+            AI Agent <span class="hero-highlight">Workspace</span>
+        </div>
+
+        <div class="hero-description">
+            A professional conversational AI workspace powered by
+            GPT-OSS 120B through Groq. Ask questions, search the web,
+            perform calculations and interact with an intelligent
+            LangGraph agent workflow.
+        </div>
+
     </div>
-
-    <div class="hero-title">
-        AI Agent <span>Workspace</span>
-    </div>
-
-    <div class="hero-description">
-        A production-style conversational AI workspace
-        powered by GPT-OSS 120B through Groq. Ask questions,
-        search the web and perform calculations through an
-        intelligent LangGraph agent workflow.
-    </div>
-
-</div>
-""",
+    """,
     unsafe_allow_html=True,
 )
 
@@ -1442,83 +1140,77 @@ st.markdown(
 # FEATURE CARDS
 # ============================================================
 
-c1, c2, c3 = st.columns(
+col1, col2, col3 = st.columns(
     3,
     gap="medium",
 )
 
 
-with c1:
+with col1:
 
     st.markdown(
         """
-<div class="feature-card">
+        <div class="feature-card">
 
-    <div class="feature-icon">
-        🧠
-    </div>
+            <div class="feature-icon">🧠</div>
 
-    <div class="feature-title">
-        Agentic Reasoning
-    </div>
+            <div class="feature-title">
+                Agentic Reasoning
+            </div>
 
-    <div class="feature-text">
-        The agent analyzes each request and decides
-        whether a tool is required before responding.
-    </div>
+            <div class="feature-text">
+                The AI analyzes the request and decides whether
+                an external tool is required before responding.
+            </div>
 
-</div>
-""",
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
 
-with c2:
+with col2:
 
     st.markdown(
         """
-<div class="feature-card">
+        <div class="feature-card">
 
-    <div class="feature-icon">
-        🔧
-    </div>
+            <div class="feature-icon">🔧</div>
 
-    <div class="feature-title">
-        Tool Orchestration
-    </div>
+            <div class="feature-title">
+                Tool Orchestration
+            </div>
 
-    <div class="feature-text">
-        LangGraph manages the workflow between the
-        language model and external tools.
-    </div>
+            <div class="feature-text">
+                LangGraph manages communication between the
+                language model and available tools.
+            </div>
 
-</div>
-""",
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
 
-with c3:
+with col3:
 
     st.markdown(
         """
-<div class="feature-card">
+        <div class="feature-card">
 
-    <div class="feature-icon">
-        ⚡
-    </div>
+            <div class="feature-icon">⚡</div>
 
-    <div class="feature-title">
-        Fast Inference
-    </div>
+            <div class="feature-title">
+                Fast AI Inference
+            </div>
 
-    <div class="feature-text">
-        GPT-OSS 120B is served through Groq for fast,
-        responsive agentic AI interactions.
-    </div>
+            <div class="feature-text">
+                GPT-OSS 120B is served through Groq for fast and
+                responsive Agentic AI interactions.
+            </div>
 
-</div>
-""",
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -1529,29 +1221,29 @@ with c3:
 
 st.markdown(
     """
-<div class="section-header">
+    <div class="section-header">
 
-    <div class="section-title">
-        Quick Actions
+        <div class="section-title">
+            Quick Actions
+        </div>
+
+        <div class="section-status">
+            Select an example to start
+        </div>
+
     </div>
-
-    <div class="section-status">
-        Select an example to start
-    </div>
-
-</div>
-""",
+    """,
     unsafe_allow_html=True,
 )
 
 
-b1, b2, b3 = st.columns(
+q1, q2, q3 = st.columns(
     3,
     gap="medium",
 )
 
 
-examples = [
+quick_actions = [
     (
         "🔎  Search the Web",
         "Search the web for the latest developments in AI agents.",
@@ -1562,17 +1254,17 @@ examples = [
     ),
     (
         "📘  Learn LangGraph",
-        "Explain LangGraph in simple terms with an example.",
+        "Explain LangGraph in simple terms with a practical example.",
     ),
 ]
 
 
-for col, (label, question) in zip(
-    (b1, b2, b3),
-    examples,
+for column, (label, question) in zip(
+    (q1, q2, q3),
+    quick_actions,
 ):
 
-    with col:
+    with column:
 
         if st.button(
             label,
@@ -1590,10 +1282,7 @@ for col, (label, question) in zip(
 
 for message in st.session_state.messages:
 
-    if isinstance(
-        message,
-        HumanMessage,
-    ):
+    if isinstance(message, HumanMessage):
 
         with st.chat_message("user"):
 
@@ -1601,10 +1290,7 @@ for message in st.session_state.messages:
                 message.content
             )
 
-    elif isinstance(
-        message,
-        AIMessage,
-    ):
+    elif isinstance(message, AIMessage):
 
         if message.content:
 
@@ -1656,67 +1342,66 @@ if prompt:
         with st.chat_message("assistant"):
 
             with st.spinner(
-                "Agent is processing your request..."
+                "AI Agent is processing your request..."
             ):
 
                 agent = build_agent()
 
+                previous_messages = list(
+                    st.session_state.messages
+                )
+
                 result = agent.invoke(
                     {
-                        "messages":
-                        st.session_state.messages
+                        "messages": previous_messages
                     }
                 )
 
                 all_messages = result["messages"]
 
-                previous_count = len(
-                    st.session_state.messages
-                )
-
                 generated = all_messages[
-                    previous_count:
+                    len(previous_messages):
                 ]
 
                 st.session_state.messages.extend(
                     generated
                 )
 
-                # ----------------------------------------
+                # -----------------------------------------
                 # TOOL ACTIVITY
-                # ----------------------------------------
+                # -----------------------------------------
 
                 tool_messages = [
-                    m
-                    for m in generated
+                    message
+                    for message in generated
                     if isinstance(
-                        m,
-                        ToolMessage,
+                        message,
+                        ToolMessage
                     )
                 ]
 
                 if tool_messages:
 
                     with st.expander(
-                        "🔧 Tool activity",
+                        "🔧 Tool Activity",
                         expanded=False,
                     ):
 
                         for tool_message in tool_messages:
 
                             st.markdown(
-                                f"**{tool_message.name}**"
+                                f"**Tool: {tool_message.name}**"
                             )
 
                             st.code(
                                 str(
                                     tool_message.content
-                                )[:4000]
+                                )[:5000]
                             )
 
-                # ----------------------------------------
+                # -----------------------------------------
                 # FINAL AI RESPONSE
-                # ----------------------------------------
+                # -----------------------------------------
 
                 final_response = ""
 
@@ -1732,7 +1417,7 @@ if prompt:
                         and message.content
                     ):
 
-                        final_response = (
+                        final_response = str(
                             message.content
                         )
 
@@ -1747,18 +1432,19 @@ if prompt:
                 else:
 
                     st.warning(
-                        "No final response was generated. "
-                        "Please try again."
+                        "The agent completed the workflow "
+                        "but did not return a final response."
                     )
 
     except Exception as error:
 
         st.error(
-            "The AI agent could not process this request."
+            "The AI Agent could not process this request."
         )
 
         with st.expander(
-            "Technical details",
+            "Technical Details",
+            expanded=False,
         ):
 
             st.code(
@@ -1767,8 +1453,7 @@ if prompt:
 
         if (
             st.session_state.messages
-            and
-            st.session_state.messages[-1]
+            and st.session_state.messages[-1]
             == user_message
         ):
 
@@ -1781,23 +1466,23 @@ if prompt:
 
 st.markdown(
     """
-<div class="footer">
+    <div class="footer">
 
-    <strong>AI Agent Dashboard</strong>
-    &nbsp; • &nbsp;
-    LangGraph
-    &nbsp; • &nbsp;
-    LangChain
-    &nbsp; • &nbsp;
-    Groq
-    &nbsp; • &nbsp;
-    GPT-OSS 120B
+        <strong>AI Agent Dashboard</strong>
+        &nbsp; • &nbsp;
+        LangGraph
+        &nbsp; • &nbsp;
+        LangChain
+        &nbsp; • &nbsp;
+        Groq
+        &nbsp; • &nbsp;
+        GPT-OSS 120B
 
-    <br>
+        <br>
 
-    Intelligent tool-calling workspace for Agentic AI.
+        Intelligent tool-calling workspace for Agentic AI.
 
-</div>
-""",
+    </div>
+    """,
     unsafe_allow_html=True,
 )
