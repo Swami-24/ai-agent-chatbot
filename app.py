@@ -24,763 +24,968 @@ st.set_page_config(
 
 
 # ============================================================
-# PROFESSIONAL DARK ENTERPRISE THEME
+# PROFESSIONAL ENTERPRISE CSS
 # ============================================================
 
 st.markdown(
     """
-<style>
+    <style>
 
-/* ============================================================
-   GLOBAL
-   ============================================================ */
+    /* ========================================================
+       GLOBAL
+       ======================================================== */
 
-html,
-body,
-.stApp,
-[data-testid="stAppViewContainer"] {
-    background: #07111F !important;
-    color: #E8F0F7 !important;
-}
+    :root {
+        --bg: #07111F;
+        --bg-soft: #0A1424;
+        --panel: #0D1929;
+        --panel-2: #101E30;
+        --panel-3: #122238;
 
-.main {
-    background: #07111F !important;
-}
+        --border: #20344A;
+        --border-light: #29445D;
 
-.block-container {
-    max-width: 1450px !important;
-    padding-top: 1.5rem !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-    padding-bottom: 7rem !important;
-}
+        --text: #F8FAFC;
+        --text-soft: #C4D0DE;
+        --text-muted: #8190A3;
 
+        --blue: #38BDF8;
+        --blue-dark: #0284C7;
+        --cyan: #67E8F9;
 
-/* ============================================================
-   GLOBAL TEXT
-   ============================================================ */
+        --green: #34D399;
+        --orange: #F59E0B;
+    }
 
-.stApp p,
-.stApp span,
-.stApp label,
-.stApp li,
-.stApp h1,
-.stApp h2,
-.stApp h3,
-.stApp h4,
-.stApp h5,
-.stApp h6,
-.stApp .stMarkdown {
-    color: #E8F0F7 !important;
-}
 
+    /* ========================================================
+       REMOVE DEFAULT WHITE AREAS
+       ======================================================== */
 
-/* ============================================================
-   STREAMLIT HEADER
-   ============================================================ */
+    html,
+    body,
+    .stApp,
+    [data-testid="stAppViewContainer"],
+    [data-testid="stAppViewContainer"] > section,
+    .main,
+    .block-container {
+        background: var(--bg) !important;
+        color: var(--text) !important;
+    }
 
-[data-testid="stHeader"] {
-    background: #07111F !important;
-}
 
+    .stApp {
+        min-height: 100vh !important;
+    }
 
-/* ============================================================
-   SIDEBAR
-   ============================================================ */
 
-[data-testid="stSidebar"] {
-    background: #091522 !important;
-    border-right: 1px solid #1B3045 !important;
-}
+    [data-testid="stAppViewContainer"] {
+        background: var(--bg) !important;
+    }
 
-[data-testid="stSidebar"] > div:first-child {
-    background: #091522 !important;
-    padding: 24px 18px !important;
-}
 
-[data-testid="stSidebar"] p,
-[data-testid="stSidebar"] span,
-[data-testid="stSidebar"] label,
-[data-testid="stSidebar"] li {
-    color: #B9C8D8 !important;
-}
+    [data-testid="stAppViewContainer"] > section {
+        background: var(--bg) !important;
+    }
 
-[data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3,
-[data-testid="stSidebar"] h4 {
-    color: #F8FAFC !important;
-}
 
-[data-testid="stSidebar"] hr {
-    border-color: #1B3045 !important;
-    margin: 22px 0 !important;
-}
+    .main {
+        background: var(--bg) !important;
+    }
 
-
-/* ============================================================
-   SIDEBAR BRAND
-   ============================================================ */
-
-.side-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 6px;
-}
-
-.side-logo {
-    width: 44px;
-    height: 44px;
-    border-radius: 11px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #0C2638;
-    border: 1px solid #1B668A;
-
-    color: #55D6FF !important;
-    font-size: 21px;
-}
-
-.side-title {
-    color: #FFFFFF !important;
-    font-size: 1.08rem;
-    font-weight: 800;
-}
-
-.side-subtitle {
-    color: #5F748A !important;
-    font-size: 0.63rem;
-    letter-spacing: 1.3px;
-    font-weight: 700;
-    margin-top: 2px;
-}
-
-
-/* ============================================================
-   SIDEBAR SECTION
-   ============================================================ */
-
-.side-section {
-    color: #55C7F5 !important;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 11px;
-}
-
-
-/* ============================================================
-   WORKFLOW
-   ============================================================ */
-
-.workflow {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 11px 0;
-}
-
-.workflow-num {
-    min-width: 26px;
-    height: 26px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #0C1C2B;
-    border: 1px solid #244762;
-    border-radius: 6px;
-
-    color: #61D5FF !important;
-    font-size: 0.67rem;
-    font-weight: 800;
-}
-
-.workflow-text {
-    color: #B7C5D5 !important;
-    font-size: 0.78rem;
-    line-height: 1.5;
-    padding-top: 3px;
-}
-
-
-/* ============================================================
-   TOOL CARDS
-   ============================================================ */
-
-.tool-box {
-    display: flex;
-    align-items: center;
-
-    padding: 10px 12px;
-    margin-bottom: 7px;
-
-    background: #0C1927;
-    border: 1px solid #1D344A;
-    border-radius: 8px;
-
-    color: #C7D4E1 !important;
-    font-size: 0.78rem;
-}
-
-.tool-box:hover {
-    border-color: #287A9F;
-    background: #0D1E2D;
-}
-
-
-/* ============================================================
-   MODEL CARD
-   ============================================================ */
-
-.model-card {
-    background: #0C1927;
-    border: 1px solid #24506A;
-    border-radius: 10px;
-    padding: 13px;
-}
-
-.model-label {
-    color: #62788E !important;
-    font-size: 0.63rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 800;
-    margin-bottom: 6px;
-}
-
-.model-value {
-    color: #65D8FF !important;
-    font-family: monospace;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-
-/* ============================================================
-   SECURITY
-   ============================================================ */
-
-.security-card {
-    background: #091D1D;
-    border: 1px solid #1C4844;
-    border-radius: 9px;
-    padding: 12px;
-
-    color: #9FC2BD !important;
-    font-size: 0.72rem;
-    line-height: 1.55;
-}
-
-
-/* ============================================================
-   SIDEBAR BUTTON
-   ============================================================ */
-
-[data-testid="stSidebar"] .stButton > button {
-    width: 100% !important;
-
-    background: #0D1A29 !important;
-    color: #CBD7E3 !important;
-
-    border: 1px solid #294056 !important;
-    border-radius: 9px !important;
-
-    min-height: 42px !important;
-
-    font-weight: 700 !important;
-}
-
-[data-testid="stSidebar"] .stButton > button:hover {
-    background: #102538 !important;
-    color: #FFFFFF !important;
-    border-color: #38BDF8 !important;
-}
-
-
-/* ============================================================
-   TOP BAR
-   ============================================================ */
-
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 3px 17px 3px;
-
-    border-bottom: 1px solid #172B3E;
-    margin-bottom: 23px;
-}
-
-.top-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.top-logo {
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #0C2638;
-    border: 1px solid #216482;
-    border-radius: 9px;
-
-    font-size: 19px;
-}
-
-.top-title {
-    color: #F8FAFC !important;
-    font-size: 1rem;
-    font-weight: 800;
-}
-
-.top-subtitle {
-    color: #647A90 !important;
-    font-size: 0.66rem;
-    margin-top: 2px;
-}
-
-.online {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    padding: 6px 11px;
-
-    background: #09211A;
-    border: 1px solid #1A493C;
-    border-radius: 20px;
-
-    color: #6EE7B7 !important;
-    font-size: 0.67rem;
-    font-weight: 800;
-}
-
-.online-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-
-    background: #34D399;
-    box-shadow: 0 0 8px #34D399;
-}
-
-
-/* ============================================================
-   HERO
-   ============================================================ */
-
-.hero {
-    background:
-        linear-gradient(
-            120deg,
-            #0C1B2C 0%,
-            #102B3D 55%,
-            #0C3442 100%
-        );
-
-    border: 1px solid #28546B;
-    border-radius: 16px;
-
-    padding: 34px 38px;
-    margin-bottom: 23px;
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.22);
-}
-
-.hero-badge {
-    display: inline-block;
-
-    padding: 6px 12px;
-
-    background: #0C2A3C;
-    border: 1px solid #26617E;
-    border-radius: 6px;
-
-    color: #72D8FF !important;
-
-    font-size: 0.66rem;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-
-    margin-bottom: 13px;
-}
-
-.hero-title {
-    color: #FFFFFF !important;
-
-    font-size: 2.4rem;
-    font-weight: 850;
-
-    line-height: 1.15;
-
-    margin-bottom: 11px;
-}
-
-.hero-title span {
-    color: #56D4FF !important;
-}
-
-.hero-description {
-    color: #B8C9D9 !important;
-
-    font-size: 0.95rem;
-    line-height: 1.7;
-
-    max-width: 900px;
-}
-
-
-/* ============================================================
-   FEATURE CARDS
-   ============================================================ */
-
-.feature-card {
-    background: #0C1826;
-
-    border: 1px solid #20384D;
-    border-radius: 13px;
-
-    padding: 20px;
-
-    min-height: 145px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.14);
-}
-
-.feature-card:hover {
-    border-color: #2E6B88;
-    transform: translateY(-1px);
-}
-
-.feature-icon {
-    font-size: 20px;
-    margin-bottom: 9px;
-}
-
-.feature-title {
-    color: #EAF3FA !important;
-
-    font-size: 0.92rem;
-    font-weight: 800;
-
-    margin-bottom: 8px;
-}
-
-.feature-text {
-    color: #91A5B8 !important;
-
-    font-size: 0.78rem;
-    line-height: 1.65;
-}
-
-
-/* ============================================================
-   SECTION
-   ============================================================ */
-
-.section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin: 26px 0 10px 0;
-}
-
-.section-title {
-    color: #DCE8F2 !important;
-
-    font-size: 0.75rem;
-    font-weight: 800;
-
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-}
-
-.section-status {
-    color: #60758A !important;
-    font-size: 0.68rem;
-}
-
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-
-.stButton > button {
-    background: #0D1B2A !important;
-
-    color: #DCE7F0 !important;
-
-    border: 1px solid #284157 !important;
-    border-radius: 9px !important;
-
-    min-height: 43px !important;
-
-    font-size: 0.8rem !important;
-    font-weight: 700 !important;
-
-    box-shadow: none !important;
-}
-
-.stButton > button:hover {
-    background: #102638 !important;
-
-    color: #FFFFFF !important;
-
-    border-color: #38BDF8 !important;
-}
-
-.stButton > button p {
-    color: inherit !important;
-}
-
-
-/* ============================================================
-   CHAT MESSAGES
-   ============================================================ */
-
-[data-testid="stChatMessage"] {
-    background: #0C1826 !important;
-
-    border: 1px solid #20384D !important;
-
-    border-radius: 13px !important;
-
-    padding: 15px 18px !important;
-
-    margin-bottom: 11px !important;
-}
-
-
-/* IMPORTANT: AI RESPONSE TEXT */
-
-[data-testid="stChatMessage"] p,
-[data-testid="stChatMessage"] span,
-[data-testid="stChatMessage"] li,
-[data-testid="stChatMessage"] h1,
-[data-testid="stChatMessage"] h2,
-[data-testid="stChatMessage"] h3,
-[data-testid="stChatMessage"] h4,
-[data-testid="stChatMessage"] strong,
-[data-testid="stChatMessage"] em {
-    color: #EAF2F8 !important;
-}
-
-[data-testid="stChatMessage"] p {
-    line-height: 1.7 !important;
-}
-
-[data-testid="stChatMessage"] h1,
-[data-testid="stChatMessage"] h2,
-[data-testid="stChatMessage"] h3 {
-    color: #FFFFFF !important;
-}
-
-
-/* ============================================================
-   CHAT INPUT
-   ============================================================ */
-
-.stBottom {
-    background: #07111F !important;
-    background-color: #07111F !important;
-
-    border-top: 1px solid #172B3E !important;
-}
-
-[data-testid="stBottom"] {
-    background: #07111F !important;
-    background-color: #07111F !important;
-}
-
-[data-testid="stBottomBlockContainer"] {
-    background: #07111F !important;
-    background-color: #07111F !important;
-
-    padding-top: 10px !important;
-    padding-bottom: 12px !important;
-}
-
-[data-testid="stChatInput"] {
-    background: #0C1826 !important;
-    background-color: #0C1826 !important;
-
-    border: 1px solid #29465D !important;
-
-    border-radius: 13px !important;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.30) !important;
-}
-
-[data-testid="stChatInput"] > div {
-    background: #0C1826 !important;
-    background-color: #0C1826 !important;
-}
-
-[data-testid="stChatInput"] textarea {
-    background: #0C1826 !important;
-    background-color: #0C1826 !important;
-
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-
-    caret-color: #5DD9FF !important;
-
-    border: none !important;
-    outline: none !important;
-
-    font-size: 0.91rem !important;
-}
-
-[data-testid="stChatInput"] textarea::placeholder {
-    color: #72879B !important;
-    -webkit-text-fill-color: #72879B !important;
-    opacity: 1 !important;
-}
-
-[data-testid="stChatInput"] button {
-    background: #0EA5E9 !important;
-    background-color: #0EA5E9 !important;
-
-    color: #FFFFFF !important;
-
-    border: none !important;
-    border-radius: 8px !important;
-}
-
-[data-testid="stChatInput"] button:hover {
-    background: #0284C7 !important;
-    background-color: #0284C7 !important;
-}
-
-
-/* ============================================================
-   EXPANDER
-   ============================================================ */
-
-[data-testid="stExpander"] {
-    background: #0A1522 !important;
-
-    border: 1px solid #20384D !important;
-
-    border-radius: 10px !important;
-}
-
-[data-testid="stExpander"] summary,
-[data-testid="stExpander"] summary span,
-[data-testid="stExpander"] summary p {
-    color: #D6E2EC !important;
-}
-
-
-/* ============================================================
-   ALERTS
-   ============================================================ */
-
-[data-testid="stAlert"] {
-    border-radius: 10px !important;
-}
-
-
-/* ============================================================
-   CODE
-   ============================================================ */
-
-[data-testid="stCode"] {
-    background: #060D16 !important;
-
-    border: 1px solid #203447 !important;
-
-    border-radius: 9px !important;
-}
-
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-.footer {
-    text-align: center;
-
-    padding: 30px 0 15px;
-
-    color: #53687B !important;
-
-    font-size: 0.7rem;
-
-    line-height: 1.8;
-}
-
-.footer strong {
-    color: #71879A !important;
-}
-
-
-/* ============================================================
-   SCROLLBAR
-   ============================================================ */
-
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-::-webkit-scrollbar-track {
-    background: #07111F;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #263D51;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #35627A;
-}
-
-
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
-@media (max-width: 768px) {
 
     .block-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        max-width: 1500px !important;
+
+        padding-top: 1.2rem !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+
+        padding-bottom: 8rem !important;
     }
 
-    .hero {
-        padding: 27px 22px;
+
+    /* ========================================================
+       HEADER
+       ======================================================== */
+
+    header[data-testid="stHeader"] {
+        background: var(--bg) !important;
     }
 
-    .hero-title {
-        font-size: 1.9rem;
+
+    [data-testid="stToolbar"] {
+        background: transparent !important;
     }
+
+
+    /* ========================================================
+       SIDEBAR
+       ======================================================== */
+
+    section[data-testid="stSidebar"] {
+        background: #081321 !important;
+    }
+
+
+    [data-testid="stSidebar"] {
+        background: #081321 !important;
+
+        border-right: 1px solid #1C2D41 !important;
+    }
+
+
+    [data-testid="stSidebar"] > div:first-child {
+        background: #081321 !important;
+
+        padding: 22px 16px !important;
+    }
+
+
+    [data-testid="stSidebar"] p {
+        color: #B9C6D5 !important;
+    }
+
+
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3,
+    [data-testid="stSidebar"] h4 {
+        color: #F8FAFC !important;
+    }
+
+
+    [data-testid="stSidebar"] hr {
+        border-color: #1B2B3E !important;
+
+        margin: 21px 0 !important;
+    }
+
+
+    /* ========================================================
+       SIDEBAR BRAND
+       ======================================================== */
+
+    .side-brand {
+        display: flex;
+
+        align-items: center;
+
+        gap: 11px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .side-logo {
+        width: 43px;
+        height: 43px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 11px;
+
+        background: #0D2639;
+
+        border: 1px solid #20516E;
+
+        color: #67E8F9 !important;
+
+        font-size: 20px;
+    }
+
+
+    .side-title {
+        color: #FFFFFF !important;
+
+        font-size: 1.05rem;
+
+        font-weight: 800;
+
+        line-height: 1.2;
+    }
+
+
+    .side-subtitle {
+        color: #6F8298 !important;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 1.3px;
+
+        font-weight: 800;
+
+        margin-top: 4px;
+    }
+
+
+    /* ========================================================
+       SIDEBAR SECTION
+       ======================================================== */
+
+    .side-section {
+        color: #67D7F4 !important;
+
+        font-size: 0.68rem;
+
+        font-weight: 800;
+
+        letter-spacing: 1.4px;
+
+        text-transform: uppercase;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* ========================================================
+       WORKFLOW
+       ======================================================== */
+
+    .workflow {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin: 9px 0;
+    }
+
+
+    .workflow-num {
+        min-width: 25px;
+
+        height: 25px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background: #0D1D2E;
+
+        border: 1px solid #28445B;
+
+        border-radius: 6px;
+
+        color: #67E8F9 !important;
+
+        font-size: 0.65rem;
+
+        font-weight: 800;
+    }
+
+
+    .workflow-text {
+        color: #B7C4D3 !important;
+
+        font-size: 0.78rem;
+
+        line-height: 1.5;
+
+        padding-top: 2px;
+    }
+
+
+    /* ========================================================
+       SIDEBAR TOOLS
+       ======================================================== */
+
+    .tool-box {
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 9px 11px;
+
+        margin-bottom: 7px;
+
+        background: #0C1928;
+
+        border: 1px solid #1D3045;
+
+        border-radius: 8px;
+
+        color: #C9D5E2 !important;
+
+        font-size: 0.77rem;
+    }
+
+
+    .tool-box:hover {
+        border-color: #2A526C;
+        background: #0F2032;
+    }
+
+
+    /* ========================================================
+       MODEL CARD
+       ======================================================== */
+
+    .model-card {
+        background: #0C1928;
+
+        border: 1px solid #24445D;
+
+        border-radius: 10px;
+
+        padding: 12px;
+    }
+
+
+    .model-label {
+        color: #718399 !important;
+
+        font-size: 0.63rem;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+
+        font-weight: 800;
+
+        margin-bottom: 6px;
+    }
+
+
+    .model-value {
+        color: #7DD3FC !important;
+
+        font-family: monospace;
+
+        font-size: 0.75rem;
+
+        font-weight: 700;
+
+        word-break: break-word;
+    }
+
+
+    /* ========================================================
+       SECURITY
+       ======================================================== */
+
+    .security-card {
+        background: #0A1919;
+
+        border: 1px solid #1E3D3B;
+
+        border-radius: 9px;
+
+        padding: 11px;
+
+        color: #A7BFBC !important;
+
+        font-size: 0.71rem;
+
+        line-height: 1.55;
+    }
+
+
+    /* ========================================================
+       SIDEBAR BUTTON
+       ======================================================== */
+
+    [data-testid="stSidebar"] .stButton > button {
+        width: 100% !important;
+
+        background: #0E1A2A !important;
+
+        color: #CBD5E1 !important;
+
+        border: 1px solid #2A3D53 !important;
+
+        border-radius: 9px !important;
+
+        min-height: 40px !important;
+
+        font-size: 0.79rem !important;
+
+        font-weight: 700 !important;
+    }
+
+
+    [data-testid="stSidebar"] .stButton > button:hover {
+        background: #13263A !important;
+
+        color: #FFFFFF !important;
+
+        border-color: #38BDF8 !important;
+    }
+
+
+    [data-testid="stSidebar"] .stButton > button p {
+        color: inherit !important;
+    }
+
+
+    /* ========================================================
+       TOP NAVBAR
+       ======================================================== */
+
+    .topbar {
+        min-height: 61px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 0 4px 14px 4px;
+
+        border-bottom: 1px solid #18283B;
+
+        margin-bottom: 22px;
+    }
+
+
+    .top-left {
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+
+    .top-logo {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background: #0D2639;
+
+        border: 1px solid #21516D;
+
+        border-radius: 9px;
+
+        color: #67E8F9 !important;
+
+        font-size: 19px;
+    }
+
+
+    .top-title {
+        color: #F8FAFC !important;
+
+        font-size: 1rem;
+
+        font-weight: 800;
+    }
+
+
+    .top-subtitle {
+        color: #718198 !important;
+
+        font-size: 0.67rem;
+
+        margin-top: 3px;
+    }
+
 
     .online {
-        display: none;
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 6px 11px;
+
+        background: #0A1E19;
+
+        border: 1px solid #1B493D;
+
+        border-radius: 20px;
+
+        color: #6EE7B7 !important;
+
+        font-size: 0.66rem;
+
+        font-weight: 800;
     }
 
-}
 
-</style>
-""",
+    .online-dot {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: #34D399;
+
+        box-shadow: 0 0 8px #34D399;
+    }
+
+
+    /* ========================================================
+       HERO
+       ======================================================== */
+
+    .hero {
+        background:
+            linear-gradient(
+                110deg,
+                #0D1B2C 0%,
+                #10283B 55%,
+                #0C2A38 100%
+            );
+
+        border: 1px solid #27465C;
+
+        border-radius: 15px;
+
+        padding: 34px 38px;
+
+        margin-bottom: 22px;
+
+        box-shadow:
+            0 16px 45px rgba(0,0,0,0.22);
+    }
+
+
+    .hero-badge {
+        display: inline-block;
+
+        padding: 6px 11px;
+
+        border-radius: 6px;
+
+        background: #0D2A3B;
+
+        border: 1px solid #24566F;
+
+        color: #7DD3FC !important;
+
+        font-size: 0.66rem;
+
+        font-weight: 800;
+
+        letter-spacing: 1.1px;
+
+        margin-bottom: 13px;
+    }
+
+
+    .hero-title {
+        color: #FFFFFF !important;
+
+        font-size: 2.35rem;
+
+        font-weight: 850;
+
+        line-height: 1.15;
+
+        margin-bottom: 11px;
+    }
+
+
+    .hero-title span {
+        color: #67E8F9 !important;
+    }
+
+
+    .hero-description {
+        color: #B9C8D8 !important;
+
+        font-size: 0.94rem;
+
+        max-width: 920px;
+
+        line-height: 1.7;
+    }
+
+
+    /* ========================================================
+       FEATURE CARDS
+       ======================================================== */
+
+    .feature-card {
+        background: #0C1726;
+
+        border: 1px solid #20354A;
+
+        border-radius: 12px;
+
+        padding: 19px;
+
+        min-height: 145px;
+
+        height: 100%;
+
+        box-shadow:
+            0 8px 25px rgba(0,0,0,0.13);
+    }
+
+
+    .feature-card:hover {
+        border-color: #2D5C77;
+
+        background: #0E1B2C;
+    }
+
+
+    .feature-icon {
+        font-size: 18px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .feature-title {
+        color: #E8F0F8 !important;
+
+        font-size: 0.91rem;
+
+        font-weight: 800;
+
+        margin-bottom: 7px;
+    }
+
+
+    .feature-text {
+        color: #8999AC !important;
+
+        font-size: 0.78rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* ========================================================
+       SECTION HEADER
+       ======================================================== */
+
+    .section-header {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin: 25px 0 9px 0;
+    }
+
+
+    .section-title {
+        color: #DCE6F2 !important;
+
+        font-size: 0.74rem;
+
+        font-weight: 800;
+
+        letter-spacing: 1.2px;
+
+        text-transform: uppercase;
+    }
+
+
+    .section-status {
+        color: #66788D !important;
+
+        font-size: 0.67rem;
+    }
+
+
+    /* ========================================================
+       NORMAL BUTTONS
+       ======================================================== */
+
+    .stButton > button {
+        background: #0E1A2A !important;
+
+        color: #D8E3EE !important;
+
+        border: 1px solid #263A50 !important;
+
+        border-radius: 8px !important;
+
+        min-height: 42px !important;
+
+        font-size: 0.8rem !important;
+
+        font-weight: 700 !important;
+
+        box-shadow: none !important;
+    }
+
+
+    .stButton > button:hover {
+        background: #13263A !important;
+
+        color: #FFFFFF !important;
+
+        border-color: #3282A8 !important;
+    }
+
+
+    .stButton > button p {
+        color: inherit !important;
+    }
+
+
+    /* ========================================================
+       CHAT MESSAGES
+       ======================================================== */
+
+    [data-testid="stChatMessage"] {
+        background: #0C1726 !important;
+
+        border: 1px solid #21354A !important;
+
+        border-radius: 12px !important;
+
+        padding: 13px 16px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+
+    [data-testid="stChatMessage"] p {
+        color: #E6EDF4 !important;
+
+        line-height: 1.65 !important;
+    }
+
+
+    [data-testid="stChatMessage"] strong {
+        color: #FFFFFF !important;
+    }
+
+
+    /* ========================================================
+       BOTTOM CHAT AREA
+       ======================================================== */
+
+    .stBottom {
+        background: #07111F !important;
+
+        background-color: #07111F !important;
+
+        border-top: 1px solid #17283B !important;
+    }
+
+
+    [data-testid="stBottom"] {
+        background: #07111F !important;
+
+        background-color: #07111F !important;
+    }
+
+
+    [data-testid="stBottomBlockContainer"] {
+        background: #07111F !important;
+
+        background-color: #07111F !important;
+
+        padding-top: 9px !important;
+
+        padding-bottom: 12px !important;
+    }
+
+
+    /* ========================================================
+       CHAT INPUT
+       ======================================================== */
+
+    [data-testid="stChatInput"] {
+        background: #0D1929 !important;
+
+        background-color: #0D1929 !important;
+
+        border: 1px solid #294158 !important;
+
+        border-radius: 12px !important;
+
+        padding: 6px !important;
+
+        box-shadow:
+            0 8px 30px rgba(0,0,0,0.35) !important;
+    }
+
+
+    [data-testid="stChatInput"] > div {
+        background: #0D1929 !important;
+
+        background-color: #0D1929 !important;
+    }
+
+
+    [data-testid="stChatInput"] textarea {
+        background: #0D1929 !important;
+
+        background-color: #0D1929 !important;
+
+        color: #F8FAFC !important;
+
+        -webkit-text-fill-color: #F8FAFC !important;
+
+        caret-color: #67E8F9 !important;
+
+        border: none !important;
+
+        outline: none !important;
+
+        font-size: 0.9rem !important;
+    }
+
+
+    [data-testid="stChatInput"] textarea::placeholder {
+        color: #718198 !important;
+
+        -webkit-text-fill-color: #718198 !important;
+
+        opacity: 1 !important;
+    }
+
+
+    [data-testid="stChatInput"] button {
+        background: #0EA5E9 !important;
+
+        background-color: #0EA5E9 !important;
+
+        color: #FFFFFF !important;
+
+        border: none !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    [data-testid="stChatInput"] button:hover {
+        background: #0284C7 !important;
+
+        background-color: #0284C7 !important;
+    }
+
+
+    /* ========================================================
+       EXPANDER
+       ======================================================== */
+
+    [data-testid="stExpander"] {
+        background: #0A1422 !important;
+
+        border: 1px solid #20344A !important;
+
+        border-radius: 9px !important;
+    }
+
+
+    [data-testid="stExpander"] summary {
+        color: #CBD5E1 !important;
+    }
+
+
+    /* ========================================================
+       ALERTS
+       ======================================================== */
+
+    [data-testid="stAlert"] {
+        border-radius: 9px !important;
+    }
+
+
+    /* ========================================================
+       CODE
+       ======================================================== */
+
+    .stCodeBlock {
+        background: #070D16 !important;
+    }
+
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+
+    .footer {
+        text-align: center;
+
+        padding: 30px 0 15px;
+
+        color: #56677C !important;
+
+        font-size: 0.7rem;
+
+        line-height: 1.8;
+    }
+
+
+    .footer strong {
+        color: #7890A8 !important;
+    }
+
+
+    /* ========================================================
+       SCROLLBAR
+       ======================================================== */
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+
+    ::-webkit-scrollbar-track {
+        background: #07111F;
+    }
+
+
+    ::-webkit-scrollbar-thumb {
+        background: #263A50;
+
+        border-radius: 10px;
+    }
+
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #315B73;
+    }
+
+
+    /* ========================================================
+       MOBILE
+       ======================================================== */
+
+    @media (max-width: 768px) {
+
+        .block-container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .hero {
+            padding: 26px 22px;
+        }
+
+        .hero-title {
+            font-size: 1.9rem;
+        }
+
+        .online {
+            display: none;
+        }
+
+        .topbar {
+            min-height: 55px;
+        }
+    }
+
+    </style>
+    """,
     unsafe_allow_html=True,
 )
 
@@ -811,24 +1016,21 @@ tools = [
 
 
 # ============================================================
-# BUILD LANGGRAPH AGENT
+# BUILD AGENT
 # ============================================================
 
 @st.cache_resource(show_spinner=False)
 def build_agent():
 
-    try:
-        api_key = st.secrets.get("GROQ_API_KEY", "")
-    except Exception:
-        api_key = ""
-
-    if not api_key:
-        api_key = os.getenv("GROQ_API_KEY", "")
+    api_key = (
+        st.secrets.get("GROQ_API_KEY")
+        or os.getenv("GROQ_API_KEY")
+    )
 
     if not api_key:
         raise RuntimeError(
             "GROQ_API_KEY is missing. "
-            "Please add GROQ_API_KEY in Streamlit Secrets."
+            "Add it to Streamlit Secrets."
         )
 
     llm = ChatGroq(
@@ -847,29 +1049,20 @@ You are a professional Agentic AI Assistant.
 
 You are powered by OpenAI GPT-OSS 120B through Groq.
 
-Your job is to provide accurate, clear and useful answers.
+Answer users clearly, accurately and professionally.
 
-TOOL RULES:
+Use web search when:
+- Current information is requested.
+- The user explicitly asks for web search.
+- The question requires online verification.
 
-1. Use web search when:
-   - The user asks for current information.
-   - The user explicitly asks you to search the web.
-   - Online verification is required.
+Use addition and multiplication tools for arithmetic
+when appropriate.
 
-2. Use the addition tool for addition calculations.
+Never claim that you searched the web unless the
+search tool was actually used.
 
-3. Use the multiplication tool for multiplication calculations.
-
-4. Do not claim that you searched the web unless
-   the web search tool was actually used.
-
-5. Give the final answer in a clean and professional format.
-
-6. Use headings, bullet points and examples when useful.
-
-7. If the user asks a simple question, answer directly.
-
-8. Do not unnecessarily explain internal agent processes.
+Keep responses useful, structured and easy to understand.
 """
 
         response = llm_with_tools.invoke(
@@ -882,31 +1075,32 @@ TOOL RULES:
             "messages": [response]
         }
 
+
     builder = StateGraph(MessagesState)
 
     builder.add_node(
         "assistant",
-        assistant
+        assistant,
     )
 
     builder.add_node(
         "tools",
-        ToolNode(tools)
+        ToolNode(tools),
     )
 
     builder.add_edge(
         START,
-        "assistant"
+        "assistant",
     )
 
     builder.add_conditional_edges(
         "assistant",
-        tools_condition
+        tools_condition,
     )
 
     builder.add_edge(
         "tools",
-        "assistant"
+        "assistant",
     )
 
     return builder.compile()
@@ -926,10 +1120,14 @@ if "messages" not in st.session_state:
 
 with st.sidebar:
 
-    st.markdown(
+    # Brand
+    st.html(
         """
         <div class="side-brand">
-            <div class="side-logo">🤖</div>
+
+            <div class="side-logo">
+                🤖
+            </div>
 
             <div>
                 <div class="side-title">
@@ -940,17 +1138,24 @@ with st.sidebar:
                     INTELLIGENT WORKSPACE
                 </div>
             </div>
+
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
+
 
     st.divider()
 
-    st.markdown(
-        '<div class="side-section">Workflow</div>',
-        unsafe_allow_html=True,
+
+    # Workflow
+    st.html(
+        """
+        <div class="side-section">
+            Workflow
+        </div>
+        """
     )
+
 
     workflow = [
         ("01", "User sends a request"),
@@ -960,11 +1165,13 @@ with st.sidebar:
         ("05", "AI returns the result"),
     ]
 
+
     for number, item in workflow:
 
-        st.markdown(
+        st.html(
             f"""
             <div class="workflow">
+
                 <div class="workflow-num">
                     {number}
                 </div>
@@ -972,44 +1179,52 @@ with st.sidebar:
                 <div class="workflow-text">
                     {item}
                 </div>
+
             </div>
-            """,
-            unsafe_allow_html=True,
+            """
         )
 
-    st.divider()
-
-    st.markdown(
-        '<div class="side-section">Available Tools</div>',
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(
-        """
-        <div class="tool-box">
-            🔎 &nbsp; Web Search
-        </div>
-
-        <div class="tool-box">
-            ➕ &nbsp; Addition
-        </div>
-
-        <div class="tool-box">
-            ✖️ &nbsp; Multiplication
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
 
     st.divider()
 
-    st.markdown(
-        '<div class="side-section">Model</div>',
-        unsafe_allow_html=True,
+
+    # Tools
+    st.html(
+        """
+        <div class="side-section">
+            Tools
+        </div>
+        """
     )
 
-    st.markdown(
+
+    st.html(
         """
+        <div class="tool-box">
+            🔎 Web Search
+        </div>
+
+        <div class="tool-box">
+            ➕ Addition
+        </div>
+
+        <div class="tool-box">
+            ✖️ Multiplication
+        </div>
+        """
+    )
+
+
+    st.divider()
+
+
+    # Model
+    st.html(
+        """
+        <div class="side-section">
+            Model
+        </div>
+
         <div class="model-card">
 
             <div class="model-label">
@@ -1021,29 +1236,31 @@ with st.sidebar:
             </div>
 
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
+
 
     st.divider()
 
-    st.markdown(
-        '<div class="side-section">Security</div>',
-        unsafe_allow_html=True,
-    )
 
-    st.markdown(
+    # Security
+    st.html(
         """
+        <div class="side-section">
+            Security
+        </div>
+
         <div class="security-card">
             🔐 API credentials are loaded securely
             through Streamlit Secrets.
             Never expose your API key in GitHub.
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
+
     st.write("")
+
 
     if st.button(
         "🗑️  Clear Conversation",
@@ -1056,10 +1273,10 @@ with st.sidebar:
 
 
 # ============================================================
-# TOP NAVIGATION
+# TOP NAVBAR
 # ============================================================
 
-st.markdown(
+st.html(
     """
     <div class="topbar">
 
@@ -1070,7 +1287,6 @@ st.markdown(
             </div>
 
             <div>
-
                 <div class="top-title">
                     AI Agent Dashboard
                 </div>
@@ -1078,7 +1294,6 @@ st.markdown(
                 <div class="top-subtitle">
                     Agentic AI • LangGraph • Groq
                 </div>
-
             </div>
 
         </div>
@@ -1092,8 +1307,7 @@ st.markdown(
         </div>
 
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
 
@@ -1101,7 +1315,7 @@ st.markdown(
 # HERO
 # ============================================================
 
-st.markdown(
+st.html(
     """
     <div class="hero">
 
@@ -1114,15 +1328,14 @@ st.markdown(
         </div>
 
         <div class="hero-description">
-            A professional conversational AI workspace powered
-            by GPT-OSS 120B through Groq. Ask questions, search
-            the web and perform calculations through an intelligent
-            LangGraph agent workflow.
+            A production-style conversational AI workspace
+            powered by GPT-OSS 120B through Groq. Ask questions,
+            search the web and perform calculations through an
+            intelligent LangGraph agent workflow.
         </div>
 
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
 
@@ -1138,7 +1351,7 @@ c1, c2, c3 = st.columns(
 
 with c1:
 
-    st.markdown(
+    st.html(
         """
         <div class="feature-card">
 
@@ -1152,19 +1365,17 @@ with c1:
 
             <div class="feature-text">
                 The agent analyzes each request and decides
-                whether an external tool is required before
-                generating the final response.
+                whether a tool is required before responding.
             </div>
 
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 
 with c2:
 
-    st.markdown(
+    st.html(
         """
         <div class="feature-card">
 
@@ -1177,19 +1388,18 @@ with c2:
             </div>
 
             <div class="feature-text">
-                LangGraph manages communication between
-                GPT-OSS 120B and the available tools.
+                LangGraph manages the workflow between the
+                language model and external tools.
             </div>
 
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 
 with c3:
 
-    st.markdown(
+    st.html(
         """
         <div class="feature-card">
 
@@ -1198,25 +1408,24 @@ with c3:
             </div>
 
             <div class="feature-title">
-                Fast AI Inference
+                Fast Inference
             </div>
 
             <div class="feature-text">
-                GPT-OSS 120B runs through Groq infrastructure
-                for fast and responsive agentic AI interactions.
+                GPT-OSS 120B is served through Groq for fast,
+                responsive agentic AI interactions.
             </div>
 
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 
 # ============================================================
-# QUICK ACTIONS
+# QUICK ACTION HEADER
 # ============================================================
 
-st.markdown(
+st.html(
     """
     <div class="section-header">
 
@@ -1229,10 +1438,13 @@ st.markdown(
         </div>
 
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
+
+# ============================================================
+# QUICK ACTION BUTTONS
+# ============================================================
 
 b1, b2, b3 = st.columns(
     3,
@@ -1279,7 +1491,10 @@ for col, (label, question) in zip(
 
 for message in st.session_state.messages:
 
-    if isinstance(message, HumanMessage):
+    if isinstance(
+        message,
+        HumanMessage,
+    ):
 
         with st.chat_message("user"):
 
@@ -1287,7 +1502,11 @@ for message in st.session_state.messages:
                 message.content
             )
 
-    elif isinstance(message, AIMessage):
+
+    elif isinstance(
+        message,
+        AIMessage,
+    ):
 
         if message.content:
 
@@ -1328,21 +1547,22 @@ if prompt:
         user_message
     )
 
+
     with st.chat_message("user"):
 
-        st.markdown(
-            prompt
-        )
+        st.markdown(prompt)
+
 
     try:
 
         with st.chat_message("assistant"):
 
             with st.spinner(
-                "🤖 Agent is processing your request..."
+                "Agent is processing your request..."
             ):
 
                 agent = build_agent()
+
 
                 result = agent.invoke(
                     {
@@ -1351,37 +1571,43 @@ if prompt:
                     }
                 )
 
+
                 all_messages = result["messages"]
+
 
                 previous_count = len(
                     st.session_state.messages
                 )
 
+
                 generated = all_messages[
                     previous_count:
                 ]
+
 
                 st.session_state.messages.extend(
                     generated
                 )
 
-                # ------------------------------------------------
+
+                # ====================================================
                 # TOOL ACTIVITY
-                # ------------------------------------------------
+                # ====================================================
 
                 tool_messages = [
-                    message
-                    for message in generated
+                    m
+                    for m in generated
                     if isinstance(
-                        message,
-                        ToolMessage,
+                        m,
+                        ToolMessage
                     )
                 ]
+
 
                 if tool_messages:
 
                     with st.expander(
-                        "🔧 Tool Activity",
+                        "🔧 Tool activity",
                         expanded=False,
                     ):
 
@@ -1397,11 +1623,13 @@ if prompt:
                                 )[:4000]
                             )
 
-                # ------------------------------------------------
-                # FINAL AI RESPONSE
-                # ------------------------------------------------
+
+                # ====================================================
+                # FINAL RESPONSE
+                # ====================================================
 
                 final_response = ""
+
 
                 for message in reversed(
                     generated
@@ -1410,7 +1638,7 @@ if prompt:
                     if (
                         isinstance(
                             message,
-                            AIMessage,
+                            AIMessage
                         )
                         and message.content
                     ):
@@ -1421,6 +1649,7 @@ if prompt:
 
                         break
 
+
                 if final_response:
 
                     st.markdown(
@@ -1430,10 +1659,10 @@ if prompt:
                 else:
 
                     st.warning(
-                        "The agent completed the workflow "
-                        "but did not return a final response. "
+                        "No final response was generated. "
                         "Please try again."
                     )
+
 
     except Exception as error:
 
@@ -1441,13 +1670,15 @@ if prompt:
             "The AI agent could not process this request."
         )
 
+
         with st.expander(
-            "Technical Details"
+            "Technical details",
         ):
 
             st.code(
                 str(error)
             )
+
 
         if (
             st.session_state.messages
@@ -1463,7 +1694,7 @@ if prompt:
 # FOOTER
 # ============================================================
 
-st.markdown(
+st.html(
     """
     <div class="footer">
 
@@ -1482,6 +1713,5 @@ st.markdown(
         Intelligent tool-calling workspace for Agentic AI.
 
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
