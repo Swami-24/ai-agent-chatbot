@@ -24,24 +24,23 @@ st.set_page_config(
 
 
 # ============================================================
-# PROFESSIONAL DARK UI
+# PROFESSIONAL DARK ENTERPRISE THEME
 # ============================================================
 
 st.markdown(
     """
 <style>
 
-/* =========================================================
+/* ============================================================
    GLOBAL
-   ========================================================= */
+   ============================================================ */
 
-html, body, [class*="css"] {
-    font-family: Inter, Arial, sans-serif !important;
-}
-
-.stApp {
+html,
+body,
+.stApp,
+[data-testid="stAppViewContainer"] {
     background: #07111F !important;
-    color: #F8FAFC !important;
+    color: #E8F0F7 !important;
 }
 
 .main {
@@ -50,62 +49,60 @@ html, body, [class*="css"] {
 
 .block-container {
     max-width: 1450px !important;
-    padding-top: 25px !important;
-    padding-left: 35px !important;
-    padding-right: 35px !important;
-    padding-bottom: 130px !important;
+    padding-top: 1.5rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-bottom: 7rem !important;
 }
 
 
-/* =========================================================
-   ALL MARKDOWN TEXT
-   ========================================================= */
+/* ============================================================
+   GLOBAL TEXT
+   ============================================================ */
 
-[data-testid="stMarkdownContainer"] {
-    color: #E8EEF7 !important;
-}
-
-[data-testid="stMarkdownContainer"] p {
-    color: #D5DFEC !important;
-}
-
-[data-testid="stMarkdownContainer"] li {
-    color: #D5DFEC !important;
-}
-
-[data-testid="stMarkdownContainer"] strong {
-    color: #FFFFFF !important;
-}
-
-[data-testid="stMarkdownContainer"] em {
-    color: #D5DFEC !important;
-}
-
-[data-testid="stMarkdownContainer"] h1,
-[data-testid="stMarkdownContainer"] h2,
-[data-testid="stMarkdownContainer"] h3,
-[data-testid="stMarkdownContainer"] h4,
-[data-testid="stMarkdownContainer"] h5 {
-    color: #F8FAFC !important;
+.stApp p,
+.stApp span,
+.stApp label,
+.stApp li,
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp h4,
+.stApp h5,
+.stApp h6,
+.stApp .stMarkdown {
+    color: #E8F0F7 !important;
 }
 
 
-/* =========================================================
+/* ============================================================
+   STREAMLIT HEADER
+   ============================================================ */
+
+[data-testid="stHeader"] {
+    background: #07111F !important;
+}
+
+
+/* ============================================================
    SIDEBAR
-   ========================================================= */
+   ============================================================ */
 
 [data-testid="stSidebar"] {
     background: #091522 !important;
-    border-right: 1px solid #1B3046 !important;
+    border-right: 1px solid #1B3045 !important;
 }
 
 [data-testid="stSidebar"] > div:first-child {
     background: #091522 !important;
-    padding: 25px 18px !important;
+    padding: 24px 18px !important;
 }
 
-[data-testid="stSidebar"] p {
-    color: #AEBED0 !important;
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] li {
+    color: #B9C8D8 !important;
 }
 
 [data-testid="stSidebar"] h1,
@@ -116,35 +113,35 @@ html, body, [class*="css"] {
 }
 
 [data-testid="stSidebar"] hr {
-    border-color: #1C3045 !important;
+    border-color: #1B3045 !important;
     margin: 22px 0 !important;
 }
 
 
-/* =========================================================
+/* ============================================================
    SIDEBAR BRAND
-   ========================================================= */
+   ============================================================ */
 
 .side-brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .side-logo {
     width: 44px;
     height: 44px;
+    border-radius: 11px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 11px;
+    background: #0C2638;
+    border: 1px solid #1B668A;
 
-    background: #0C2A42;
-    border: 1px solid #15567D;
-
+    color: #55D6FF !important;
     font-size: 21px;
 }
 
@@ -155,33 +152,31 @@ html, body, [class*="css"] {
 }
 
 .side-subtitle {
-    color: #6F849A !important;
+    color: #5F748A !important;
     font-size: 0.63rem;
     letter-spacing: 1.3px;
     font-weight: 700;
+    margin-top: 2px;
 }
 
 
-/* =========================================================
+/* ============================================================
    SIDEBAR SECTION
-   ========================================================= */
+   ============================================================ */
 
 .side-section {
-    color: #4CC9F0 !important;
-
+    color: #55C7F5 !important;
     font-size: 0.68rem;
     font-weight: 800;
-
-    letter-spacing: 1.4px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-
     margin-bottom: 11px;
 }
 
 
-/* =========================================================
+/* ============================================================
    WORKFLOW
-   ========================================================= */
+   ============================================================ */
 
 .workflow {
     display: flex;
@@ -191,35 +186,33 @@ html, body, [class*="css"] {
 }
 
 .workflow-num {
-    min-width: 25px;
-    height: 25px;
+    min-width: 26px;
+    height: 26px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #0D2032;
-    border: 1px solid #25425B;
-
+    background: #0C1C2B;
+    border: 1px solid #244762;
     border-radius: 6px;
 
-    color: #67E8F9 !important;
-
-    font-size: 0.65rem;
+    color: #61D5FF !important;
+    font-size: 0.67rem;
     font-weight: 800;
 }
 
 .workflow-text {
-    color: #B9C7D6 !important;
-
-    font-size: 0.77rem;
+    color: #B7C5D5 !important;
+    font-size: 0.78rem;
     line-height: 1.5;
+    padding-top: 3px;
 }
 
 
-/* =========================================================
+/* ============================================================
    TOOL CARDS
-   ========================================================= */
+   ============================================================ */
 
 .tool-box {
     display: flex;
@@ -228,92 +221,75 @@ html, body, [class*="css"] {
     padding: 10px 12px;
     margin-bottom: 7px;
 
-    background: #0D1A29;
-
-    border: 1px solid #1E344B;
+    background: #0C1927;
+    border: 1px solid #1D344A;
     border-radius: 8px;
 
-    color: #D1DCE8 !important;
+    color: #C7D4E1 !important;
+    font-size: 0.78rem;
+}
 
-    font-size: 0.77rem;
+.tool-box:hover {
+    border-color: #287A9F;
+    background: #0D1E2D;
 }
 
 
-/* =========================================================
+/* ============================================================
    MODEL CARD
-   ========================================================= */
+   ============================================================ */
 
 .model-card {
-    background: #0D1B2A;
-
-    border: 1px solid #24435C;
-
+    background: #0C1927;
+    border: 1px solid #24506A;
     border-radius: 10px;
-
     padding: 13px;
 }
 
 .model-label {
-    color: #71859A !important;
-
+    color: #62788E !important;
     font-size: 0.63rem;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
     font-weight: 800;
-
     margin-bottom: 6px;
 }
 
 .model-value {
-    color: #5ED8FF !important;
-
-    font-family: Consolas, monospace;
-
-    font-size: 0.74rem;
-
+    color: #65D8FF !important;
+    font-family: monospace;
+    font-size: 0.75rem;
     font-weight: 700;
-
-    word-break: break-word;
 }
 
 
-/* =========================================================
+/* ============================================================
    SECURITY
-   ========================================================= */
+   ============================================================ */
 
 .security-card {
-    background: #0A1D1C;
-
-    border: 1px solid #1B4842;
-
+    background: #091D1D;
+    border: 1px solid #1C4844;
     border-radius: 9px;
-
     padding: 12px;
 
-    color: #9FC3BE !important;
-
-    font-size: 0.71rem;
-
+    color: #9FC2BD !important;
+    font-size: 0.72rem;
     line-height: 1.55;
 }
 
 
-/* =========================================================
+/* ============================================================
    SIDEBAR BUTTON
-   ========================================================= */
+   ============================================================ */
 
 [data-testid="stSidebar"] .stButton > button {
     width: 100% !important;
 
-    background: #0D1B2A !important;
+    background: #0D1A29 !important;
+    color: #CBD7E3 !important;
 
-    color: #D9E5F0 !important;
-
-    border: 1px solid #284058 !important;
-
+    border: 1px solid #294056 !important;
     border-radius: 9px !important;
 
     min-height: 42px !important;
@@ -322,289 +298,251 @@ html, body, [class*="css"] {
 }
 
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: #12263A !important;
-
+    background: #102538 !important;
     color: #FFFFFF !important;
-
-    border-color: #39BCEB !important;
+    border-color: #38BDF8 !important;
 }
 
 
-/* =========================================================
+/* ============================================================
    TOP BAR
-   ========================================================= */
+   ============================================================ */
 
 .topbar {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    padding: 0 0 18px 0;
+    padding: 0 3px 17px 3px;
 
-    margin-bottom: 24px;
-
-    border-bottom: 1px solid #1A2C40;
+    border-bottom: 1px solid #172B3E;
+    margin-bottom: 23px;
 }
 
 .top-left {
     display: flex;
-
     align-items: center;
-
     gap: 12px;
 }
 
 .top-logo {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    background: #0C2940;
+    background: #0C2638;
+    border: 1px solid #216482;
+    border-radius: 9px;
 
-    border: 1px solid #18577B;
-
-    border-radius: 10px;
-
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .top-title {
-    color: #FFFFFF !important;
-
-    font-size: 1.02rem;
-
+    color: #F8FAFC !important;
+    font-size: 1rem;
     font-weight: 800;
 }
 
 .top-subtitle {
-    color: #71859A !important;
-
-    font-size: 0.67rem;
-
-    margin-top: 3px;
+    color: #647A90 !important;
+    font-size: 0.66rem;
+    margin-top: 2px;
 }
 
 .online {
     display: flex;
-
     align-items: center;
-
     gap: 7px;
 
-    padding: 7px 11px;
+    padding: 6px 11px;
 
-    background: #092019;
-
-    border: 1px solid #18503E;
-
+    background: #09211A;
+    border: 1px solid #1A493C;
     border-radius: 20px;
 
     color: #6EE7B7 !important;
-
-    font-size: 0.66rem;
-
+    font-size: 0.67rem;
     font-weight: 800;
 }
 
 .online-dot {
     width: 7px;
     height: 7px;
-
     border-radius: 50%;
 
     background: #34D399;
-
-    box-shadow: 0 0 9px #34D399;
+    box-shadow: 0 0 8px #34D399;
 }
 
 
-/* =========================================================
+/* ============================================================
    HERO
-   ========================================================= */
+   ============================================================ */
 
 .hero {
     background:
         linear-gradient(
-            115deg,
-            #0E1D2E 0%,
-            #102B3E 50%,
-            #0D3541 100%
+            120deg,
+            #0C1B2C 0%,
+            #102B3D 55%,
+            #0C3442 100%
         );
 
-    border: 1px solid #285069;
-
+    border: 1px solid #28546B;
     border-radius: 16px;
 
-    padding: 38px 42px;
-
-    margin-bottom: 24px;
+    padding: 34px 38px;
+    margin-bottom: 23px;
 
     box-shadow:
-        0 18px 50px rgba(0,0,0,0.25);
+        0 15px 45px rgba(0, 0, 0, 0.22);
 }
 
 .hero-badge {
     display: inline-block;
 
-    padding: 7px 12px;
+    padding: 6px 12px;
 
-    border-radius: 7px;
+    background: #0C2A3C;
+    border: 1px solid #26617E;
+    border-radius: 6px;
 
-    background: #0B2B3F;
+    color: #72D8FF !important;
 
-    border: 1px solid #1E5A76;
-
-    color: #67E8F9 !important;
-
-    font-size: 0.67rem;
-
+    font-size: 0.66rem;
     font-weight: 800;
-
     letter-spacing: 1.2px;
 
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
 
 .hero-title {
     color: #FFFFFF !important;
 
-    font-size: 2.45rem;
-
+    font-size: 2.4rem;
     font-weight: 850;
 
     line-height: 1.15;
 
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 }
 
-.hero-highlight {
-    color: #4DD7FF !important;
+.hero-title span {
+    color: #56D4FF !important;
 }
 
 .hero-description {
-    color: #C1CFDD !important;
+    color: #B8C9D9 !important;
 
-    font-size: 0.96rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
 
     max-width: 900px;
-
-    line-height: 1.75;
 }
 
 
-/* =========================================================
+/* ============================================================
    FEATURE CARDS
-   ========================================================= */
+   ============================================================ */
 
 .feature-card {
-    background: #0C1827;
+    background: #0C1826;
 
-    border: 1px solid #1F354A;
-
+    border: 1px solid #20384D;
     border-radius: 13px;
 
     padding: 20px;
 
-    min-height: 150px;
+    min-height: 145px;
 
     box-shadow:
-        0 8px 28px rgba(0,0,0,0.16);
+        0 8px 25px rgba(0,0,0,0.14);
 }
 
 .feature-card:hover {
-    border-color: #2B6078;
+    border-color: #2E6B88;
+    transform: translateY(-1px);
 }
 
 .feature-icon {
     font-size: 20px;
-
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 .feature-title {
-    color: #F1F6FB !important;
+    color: #EAF3FA !important;
 
-    font-size: 0.93rem;
-
+    font-size: 0.92rem;
     font-weight: 800;
 
     margin-bottom: 8px;
 }
 
 .feature-text {
-    color: #A7B6C8 !important;
+    color: #91A5B8 !important;
 
     font-size: 0.78rem;
-
     line-height: 1.65;
 }
 
 
-/* =========================================================
+/* ============================================================
    SECTION
-   ========================================================= */
+   ============================================================ */
 
 .section-header {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    margin: 27px 0 10px 0;
+    margin: 26px 0 10px 0;
 }
 
 .section-title {
-    color: #DDE7F2 !important;
+    color: #DCE8F2 !important;
 
-    font-size: 0.74rem;
-
+    font-size: 0.75rem;
     font-weight: 800;
 
     letter-spacing: 1.3px;
-
     text-transform: uppercase;
 }
 
 .section-status {
-    color: #6E8195 !important;
-
-    font-size: 0.67rem;
+    color: #60758A !important;
+    font-size: 0.68rem;
 }
 
 
-/* =========================================================
+/* ============================================================
    BUTTONS
-   ========================================================= */
+   ============================================================ */
 
 .stButton > button {
-    background: #0E1B2A !important;
+    background: #0D1B2A !important;
 
-    color: #E1EAF3 !important;
+    color: #DCE7F0 !important;
 
-    border: 1px solid #294057 !important;
-
+    border: 1px solid #284157 !important;
     border-radius: 9px !important;
 
-    min-height: 44px !important;
+    min-height: 43px !important;
 
     font-size: 0.8rem !important;
-
     font-weight: 700 !important;
+
+    box-shadow: none !important;
 }
 
 .stButton > button:hover {
-    background: #12283B !important;
+    background: #102638 !important;
 
     color: #FFFFFF !important;
 
-    border-color: #35BCEB !important;
+    border-color: #38BDF8 !important;
 }
 
 .stButton > button p {
@@ -612,174 +550,177 @@ html, body, [class*="css"] {
 }
 
 
-/* =========================================================
-   CHAT MESSAGE
-   ========================================================= */
+/* ============================================================
+   CHAT MESSAGES
+   ============================================================ */
 
 [data-testid="stChatMessage"] {
-    background: #0B1725 !important;
+    background: #0C1826 !important;
 
-    border: 1px solid #20364B !important;
+    border: 1px solid #20384D !important;
 
     border-radius: 13px !important;
 
     padding: 15px 18px !important;
 
-    margin-bottom: 12px !important;
+    margin-bottom: 11px !important;
 }
 
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] {
-    color: #EAF1F8 !important;
+
+/* IMPORTANT: AI RESPONSE TEXT */
+
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3,
+[data-testid="stChatMessage"] h4,
+[data-testid="stChatMessage"] strong,
+[data-testid="stChatMessage"] em {
+    color: #EAF2F8 !important;
 }
 
 [data-testid="stChatMessage"] p {
-    color: #EAF1F8 !important;
-
     line-height: 1.7 !important;
 }
 
-[data-testid="stChatMessage"] li {
-    color: #EAF1F8 !important;
-}
-
-[data-testid="stChatMessage"] strong {
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3 {
     color: #FFFFFF !important;
 }
 
-[data-testid="stChatMessage"] code {
-    color: #8BE8FF !important;
-}
 
-
-/* =========================================================
+/* ============================================================
    CHAT INPUT
-   ========================================================= */
+   ============================================================ */
 
 .stBottom {
     background: #07111F !important;
+    background-color: #07111F !important;
 
-    border-top: 1px solid #1B2D41 !important;
+    border-top: 1px solid #172B3E !important;
 }
 
 [data-testid="stBottom"] {
     background: #07111F !important;
+    background-color: #07111F !important;
 }
 
 [data-testid="stBottomBlockContainer"] {
     background: #07111F !important;
+    background-color: #07111F !important;
 
     padding-top: 10px !important;
-
-    padding-bottom: 14px !important;
+    padding-bottom: 12px !important;
 }
 
 [data-testid="stChatInput"] {
-    background: #0D1B2A !important;
+    background: #0C1826 !important;
+    background-color: #0C1826 !important;
 
-    border: 1px solid #29435B !important;
+    border: 1px solid #29465D !important;
 
     border-radius: 13px !important;
 
-    padding: 5px !important;
-
     box-shadow:
-        0 10px 35px rgba(0,0,0,0.35) !important;
+        0 8px 30px rgba(0,0,0,0.30) !important;
 }
 
 [data-testid="stChatInput"] > div {
-    background: #0D1B2A !important;
+    background: #0C1826 !important;
+    background-color: #0C1826 !important;
 }
 
 [data-testid="stChatInput"] textarea {
-    background: #0D1B2A !important;
+    background: #0C1826 !important;
+    background-color: #0C1826 !important;
 
     color: #FFFFFF !important;
-
     -webkit-text-fill-color: #FFFFFF !important;
 
-    caret-color: #4DD7FF !important;
+    caret-color: #5DD9FF !important;
 
     border: none !important;
+    outline: none !important;
 
-    font-size: 0.92rem !important;
+    font-size: 0.91rem !important;
 }
 
 [data-testid="stChatInput"] textarea::placeholder {
-    color: #74879B !important;
-
-    -webkit-text-fill-color: #74879B !important;
-
+    color: #72879B !important;
+    -webkit-text-fill-color: #72879B !important;
     opacity: 1 !important;
 }
 
 [data-testid="stChatInput"] button {
-    background: #0798D4 !important;
+    background: #0EA5E9 !important;
+    background-color: #0EA5E9 !important;
 
     color: #FFFFFF !important;
 
     border: none !important;
-
-    border-radius: 9px !important;
+    border-radius: 8px !important;
 }
 
 [data-testid="stChatInput"] button:hover {
-    background: #007DB5 !important;
+    background: #0284C7 !important;
+    background-color: #0284C7 !important;
 }
 
 
-/* =========================================================
+/* ============================================================
    EXPANDER
-   ========================================================= */
+   ============================================================ */
 
 [data-testid="stExpander"] {
     background: #0A1522 !important;
 
-    border: 1px solid #21384D !important;
+    border: 1px solid #20384D !important;
 
     border-radius: 10px !important;
 }
 
-[data-testid="stExpander"] summary {
-    color: #D9E4EF !important;
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary span,
+[data-testid="stExpander"] summary p {
+    color: #D6E2EC !important;
 }
 
-[data-testid="stExpander"] p {
-    color: #D9E4EF !important;
-}
 
-
-/* =========================================================
+/* ============================================================
    ALERTS
-   ========================================================= */
+   ============================================================ */
 
 [data-testid="stAlert"] {
     border-radius: 10px !important;
 }
 
-[data-testid="stAlert"] p {
-    color: #E5EDF5 !important;
+
+/* ============================================================
+   CODE
+   ============================================================ */
+
+[data-testid="stCode"] {
+    background: #060D16 !important;
+
+    border: 1px solid #203447 !important;
+
+    border-radius: 9px !important;
 }
 
 
-/* =========================================================
-   CODE BLOCK
-   ========================================================= */
-
-[data-testid="stCodeBlock"] {
-    background: #050B12 !important;
-}
-
-
-/* =========================================================
+/* ============================================================
    FOOTER
-   ========================================================= */
+   ============================================================ */
 
 .footer {
     text-align: center;
 
-    padding: 35px 0 15px;
+    padding: 30px 0 15px;
 
-    color: #64778B !important;
+    color: #53687B !important;
 
     font-size: 0.7rem;
 
@@ -787,23 +728,45 @@ html, body, [class*="css"] {
 }
 
 .footer strong {
-    color: #8A9BAE !important;
+    color: #71879A !important;
 }
 
 
-/* =========================================================
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07111F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #263D51;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #35627A;
+}
+
+
+/* ============================================================
    MOBILE
-   ========================================================= */
+   ============================================================ */
 
 @media (max-width: 768px) {
 
     .block-container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 
     .hero {
-        padding: 27px 23px;
+        padding: 27px 22px;
     }
 
     .hero-title {
@@ -814,9 +777,6 @@ html, body, [class*="css"] {
         display: none;
     }
 
-    .topbar {
-        margin-bottom: 18px;
-    }
 }
 
 </style>
@@ -857,20 +817,18 @@ tools = [
 @st.cache_resource(show_spinner=False)
 def build_agent():
 
-    api_key = None
-
     try:
-        api_key = st.secrets.get("GROQ_API_KEY")
+        api_key = st.secrets.get("GROQ_API_KEY", "")
     except Exception:
-        api_key = None
+        api_key = ""
 
     if not api_key:
-        api_key = os.getenv("GROQ_API_KEY")
+        api_key = os.getenv("GROQ_API_KEY", "")
 
     if not api_key:
         raise RuntimeError(
-            "GROQ_API_KEY is missing. Add GROQ_API_KEY "
-            "inside Streamlit Secrets."
+            "GROQ_API_KEY is missing. "
+            "Please add GROQ_API_KEY in Streamlit Secrets."
         )
 
     llm = ChatGroq(
@@ -889,16 +847,29 @@ You are a professional Agentic AI Assistant.
 
 You are powered by OpenAI GPT-OSS 120B through Groq.
 
-Your responsibilities:
+Your job is to provide accurate, clear and useful answers.
 
-1. Answer questions clearly and professionally.
-2. Keep answers structured and easy to read.
-3. Use web search when current information is needed.
-4. Use web search when the user explicitly asks to search online.
-5. Use addition and multiplication tools for arithmetic when useful.
-6. Never claim to have searched the web unless the search tool was actually used.
-7. If a tool is used, use its result to produce a clear final answer.
-8. Do not expose internal reasoning or hidden chain-of-thought.
+TOOL RULES:
+
+1. Use web search when:
+   - The user asks for current information.
+   - The user explicitly asks you to search the web.
+   - Online verification is required.
+
+2. Use the addition tool for addition calculations.
+
+3. Use the multiplication tool for multiplication calculations.
+
+4. Do not claim that you searched the web unless
+   the web search tool was actually used.
+
+5. Give the final answer in a clean and professional format.
+
+6. Use headings, bullet points and examples when useful.
+
+7. If the user asks a simple question, answer directly.
+
+8. Do not unnecessarily explain internal agent processes.
 """
 
         response = llm_with_tools.invoke(
@@ -911,34 +882,34 @@ Your responsibilities:
             "messages": [response]
         }
 
-    graph = StateGraph(MessagesState)
+    builder = StateGraph(MessagesState)
 
-    graph.add_node(
+    builder.add_node(
         "assistant",
         assistant
     )
 
-    graph.add_node(
+    builder.add_node(
         "tools",
         ToolNode(tools)
     )
 
-    graph.add_edge(
+    builder.add_edge(
         START,
         "assistant"
     )
 
-    graph.add_conditional_edges(
+    builder.add_conditional_edges(
         "assistant",
         tools_condition
     )
 
-    graph.add_edge(
+    builder.add_edge(
         "tools",
         "assistant"
     )
 
-    return graph.compile()
+    return builder.compile()
 
 
 # ============================================================
@@ -961,7 +932,10 @@ with st.sidebar:
             <div class="side-logo">🤖</div>
 
             <div>
-                <div class="side-title">AI Agent</div>
+                <div class="side-title">
+                    AI Agent
+                </div>
+
                 <div class="side-subtitle">
                     INTELLIGENT WORKSPACE
                 </div>
@@ -978,23 +952,25 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-    workflow_items = [
+    workflow = [
         ("01", "User sends a request"),
         ("02", "GPT-OSS 120B analyzes it"),
         ("03", "LangGraph selects a tool"),
         ("04", "Tool executes the task"),
-        ("05", "AI generates the answer"),
+        ("05", "AI returns the result"),
     ]
 
-    for number, text in workflow_items:
+    for number, item in workflow:
 
         st.markdown(
             f"""
             <div class="workflow">
-                <div class="workflow-num">{number}</div>
+                <div class="workflow-num">
+                    {number}
+                </div>
 
                 <div class="workflow-text">
-                    {text}
+                    {item}
                 </div>
             </div>
             """,
@@ -1010,9 +986,17 @@ with st.sidebar:
 
     st.markdown(
         """
-        <div class="tool-box">🔎 &nbsp; Web Search</div>
-        <div class="tool-box">➕ &nbsp; Addition</div>
-        <div class="tool-box">✖️ &nbsp; Multiplication</div>
+        <div class="tool-box">
+            🔎 &nbsp; Web Search
+        </div>
+
+        <div class="tool-box">
+            ➕ &nbsp; Addition
+        </div>
+
+        <div class="tool-box">
+            ✖️ &nbsp; Multiplication
+        </div>
         """,
         unsafe_allow_html=True,
     )
@@ -1027,13 +1011,15 @@ with st.sidebar:
     st.markdown(
         """
         <div class="model-card">
+
             <div class="model-label">
-                Groq Inference Model
+                Groq Inference
             </div>
 
             <div class="model-value">
                 openai/gpt-oss-120b
             </div>
+
         </div>
         """,
         unsafe_allow_html=True,
@@ -1051,7 +1037,6 @@ with st.sidebar:
         <div class="security-card">
             🔐 API credentials are loaded securely
             through Streamlit Secrets.
-            <br><br>
             Never expose your API key in GitHub.
         </div>
         """,
@@ -1085,6 +1070,7 @@ st.markdown(
             </div>
 
             <div>
+
                 <div class="top-title">
                     AI Agent Dashboard
                 </div>
@@ -1092,13 +1078,17 @@ st.markdown(
                 <div class="top-subtitle">
                     Agentic AI • LangGraph • Groq
                 </div>
+
             </div>
 
         </div>
 
         <div class="online">
+
             <div class="online-dot"></div>
+
             SYSTEM ONLINE
+
         </div>
 
     </div>
@@ -1120,13 +1110,13 @@ st.markdown(
         </div>
 
         <div class="hero-title">
-            AI Agent <span class="hero-highlight">Workspace</span>
+            AI Agent <span>Workspace</span>
         </div>
 
         <div class="hero-description">
-            A professional conversational AI workspace powered by
-            GPT-OSS 120B through Groq. Ask questions, search the web,
-            perform calculations and interact with an intelligent
+            A professional conversational AI workspace powered
+            by GPT-OSS 120B through Groq. Ask questions, search
+            the web and perform calculations through an intelligent
             LangGraph agent workflow.
         </div>
 
@@ -1140,27 +1130,30 @@ st.markdown(
 # FEATURE CARDS
 # ============================================================
 
-col1, col2, col3 = st.columns(
+c1, c2, c3 = st.columns(
     3,
     gap="medium",
 )
 
 
-with col1:
+with c1:
 
     st.markdown(
         """
         <div class="feature-card">
 
-            <div class="feature-icon">🧠</div>
+            <div class="feature-icon">
+                🧠
+            </div>
 
             <div class="feature-title">
                 Agentic Reasoning
             </div>
 
             <div class="feature-text">
-                The AI analyzes the request and decides whether
-                an external tool is required before responding.
+                The agent analyzes each request and decides
+                whether an external tool is required before
+                generating the final response.
             </div>
 
         </div>
@@ -1169,21 +1162,23 @@ with col1:
     )
 
 
-with col2:
+with c2:
 
     st.markdown(
         """
         <div class="feature-card">
 
-            <div class="feature-icon">🔧</div>
+            <div class="feature-icon">
+                🔧
+            </div>
 
             <div class="feature-title">
                 Tool Orchestration
             </div>
 
             <div class="feature-text">
-                LangGraph manages communication between the
-                language model and available tools.
+                LangGraph manages communication between
+                GPT-OSS 120B and the available tools.
             </div>
 
         </div>
@@ -1192,21 +1187,23 @@ with col2:
     )
 
 
-with col3:
+with c3:
 
     st.markdown(
         """
         <div class="feature-card">
 
-            <div class="feature-icon">⚡</div>
+            <div class="feature-icon">
+                ⚡
+            </div>
 
             <div class="feature-title">
                 Fast AI Inference
             </div>
 
             <div class="feature-text">
-                GPT-OSS 120B is served through Groq for fast and
-                responsive Agentic AI interactions.
+                GPT-OSS 120B runs through Groq infrastructure
+                for fast and responsive agentic AI interactions.
             </div>
 
         </div>
@@ -1237,13 +1234,13 @@ st.markdown(
 )
 
 
-q1, q2, q3 = st.columns(
+b1, b2, b3 = st.columns(
     3,
     gap="medium",
 )
 
 
-quick_actions = [
+examples = [
     (
         "🔎  Search the Web",
         "Search the web for the latest developments in AI agents.",
@@ -1254,17 +1251,17 @@ quick_actions = [
     ),
     (
         "📘  Learn LangGraph",
-        "Explain LangGraph in simple terms with a practical example.",
+        "Explain LangGraph in simple terms with an example.",
     ),
 ]
 
 
-for column, (label, question) in zip(
-    (q1, q2, q3),
-    quick_actions,
+for col, (label, question) in zip(
+    (b1, b2, b3),
+    examples,
 ):
 
-    with column:
+    with col:
 
         if st.button(
             label,
@@ -1342,41 +1339,42 @@ if prompt:
         with st.chat_message("assistant"):
 
             with st.spinner(
-                "AI Agent is processing your request..."
+                "🤖 Agent is processing your request..."
             ):
 
                 agent = build_agent()
 
-                previous_messages = list(
-                    st.session_state.messages
-                )
-
                 result = agent.invoke(
                     {
-                        "messages": previous_messages
+                        "messages":
+                        st.session_state.messages
                     }
                 )
 
                 all_messages = result["messages"]
 
+                previous_count = len(
+                    st.session_state.messages
+                )
+
                 generated = all_messages[
-                    len(previous_messages):
+                    previous_count:
                 ]
 
                 st.session_state.messages.extend(
                     generated
                 )
 
-                # -----------------------------------------
+                # ------------------------------------------------
                 # TOOL ACTIVITY
-                # -----------------------------------------
+                # ------------------------------------------------
 
                 tool_messages = [
                     message
                     for message in generated
                     if isinstance(
                         message,
-                        ToolMessage
+                        ToolMessage,
                     )
                 ]
 
@@ -1390,18 +1388,18 @@ if prompt:
                         for tool_message in tool_messages:
 
                             st.markdown(
-                                f"**Tool: {tool_message.name}**"
+                                f"**{tool_message.name}**"
                             )
 
                             st.code(
                                 str(
                                     tool_message.content
-                                )[:5000]
+                                )[:4000]
                             )
 
-                # -----------------------------------------
+                # ------------------------------------------------
                 # FINAL AI RESPONSE
-                # -----------------------------------------
+                # ------------------------------------------------
 
                 final_response = ""
 
@@ -1417,7 +1415,7 @@ if prompt:
                         and message.content
                     ):
 
-                        final_response = str(
+                        final_response = (
                             message.content
                         )
 
@@ -1433,18 +1431,18 @@ if prompt:
 
                     st.warning(
                         "The agent completed the workflow "
-                        "but did not return a final response."
+                        "but did not return a final response. "
+                        "Please try again."
                     )
 
     except Exception as error:
 
         st.error(
-            "The AI Agent could not process this request."
+            "The AI agent could not process this request."
         )
 
         with st.expander(
-            "Technical Details",
-            expanded=False,
+            "Technical Details"
         ):
 
             st.code(
@@ -1453,7 +1451,8 @@ if prompt:
 
         if (
             st.session_state.messages
-            and st.session_state.messages[-1]
+            and
+            st.session_state.messages[-1]
             == user_message
         ):
 
