@@ -35,22 +35,27 @@ st.markdown(
        GLOBAL
        ======================================================== */
 
-   :root {
-    --bg: #F4F7FB;
-    --panel: #FFFFFF;
-    --panel-2: #F8FAFC;
-    --border: #D9E2EC;
-    --border-light: #CBD5E1;
+    :root {
+        --bg: #07111F;
+        --bg-soft: #0A1424;
+        --panel: #0D1929;
+        --panel-2: #101E30;
+        --panel-3: #122238;
 
-    --text: #172033;
-    --text-soft: #475569;
-    --text-muted: #64748B;
+        --border: #20344A;
+        --border-light: #29445D;
 
-    --blue: #2563EB;
-    --blue-dark: #1D4ED8;
-    --green: #16A34A;
-    --orange: #F59E0B;
-}
+        --text: #F8FAFC;
+        --text-soft: #C4D0DE;
+        --text-muted: #8190A3;
+
+        --blue: #38BDF8;
+        --blue-dark: #0284C7;
+        --cyan: #67E8F9;
+
+        --green: #34D399;
+        --orange: #F59E0B;
+    }
 
 
     /* ========================================================
